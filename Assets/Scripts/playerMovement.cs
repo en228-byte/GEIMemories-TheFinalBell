@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public GameObject playerChar;
 
     public float deltaX = 0.1f;
     public float deltaY = 0.1f;
@@ -23,24 +22,24 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             Vector3 movement = new Vector3(deltaX/10, 0, 0);
-            playerChar.transform.Translate ( movement);
+            transform.Translate ( movement);
         }
         //move backwards (right to left)
         if (Input.GetKey(KeyCode.A))
         {
             Vector3 movement = new Vector3(-deltaX/10, 0, 0);
-            playerChar.transform.Translate(movement);
+            transform.Translate(movement);
         }
         //move up (down to up)
         if (Input.GetKey(KeyCode.W))
         {
             Vector3 movement = new Vector3(0, deltaY/10, 0);
-            playerChar.transform.Translate(movement);
+            transform.Translate(movement);
         }
         if (Input.GetKey(KeyCode.S))
         {
             Vector3 movement = new Vector3(0, -deltaY/10, 0);
-            playerChar.transform.Translate(movement);
+            transform.Translate(movement);
         }
 
     }

@@ -44,6 +44,7 @@ public class navigation : MonoBehaviour
         gate4 = schoolMap[3, 5];
         exitGate = schoolMap[4, 4];
         curBackground = Instantiate(classroom);
+        playerChar = Instantiate(playerChar);
     }
 
     // Update is called once per frame
@@ -56,23 +57,38 @@ public class navigation : MonoBehaviour
             //activate move command with E key
             if (Input.GetKeyUp(KeyCode.E))
             {
-                //check if left space is valid area
+                //check if space is valid area
 
-                if (schoolMap[curRow, curCol+1] != "o" && schoolMap[curRow, curCol + 1] != "lo")
+                try
                 {
-                    //change location to the next one
-                    curCol += 1;
-                    changeBackground(schoolMap[curRow, curCol]);
-                    Debug.Log(schoolMap[curRow, curCol]);
+                    //going right
+                    if (schoolMap[curRow, curCol + 1] != "o" && schoolMap[curRow, curCol + 1] != "lo")
+                    {
+                        //change location to the next one
+                        curCol += 1;
+                        changeBackground(schoolMap[curRow, curCol]);
+                        Debug.Log(schoolMap[curRow, curCol]);
+
+                        //switching player to appropriate place in new area
+                        playerChar.transform.position = new Vector3(-8.24f, playerChar.transform.position.y, playerChar.transform.position.z);
+                    }
+                    else if (schoolMap[curRow, curCol + 1] == "lo")
+                    {
+                        Debug.Log("Press space to unlock");
+
+                    }
+                    else
+                    {
+                        Debug.Log("There's nothing there...");
+                    }
                 }
-                else if (schoolMap[curRow, curCol + 1] == "lo")
+                catch (System.IndexOutOfRangeException)
                 {
-                    Debug.Log("Press space to unlock");
-                    
-                } else
-                {
+
                     Debug.Log("There's nothing there...");
                 }
+
+               
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -88,23 +104,35 @@ public class navigation : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
-                if (schoolMap[curRow, curCol -1] != "o" && schoolMap[curRow, curCol - 1] != "lo")
+                try
                 {
-                    //change location to the next one
-                    curCol -= 1;
-                    changeBackground(schoolMap[curRow, curCol]);
-                    Debug.Log(schoolMap[curRow, curCol]);
+                    if (schoolMap[curRow, curCol - 1] != "o" && schoolMap[curRow, curCol - 1] != "lo")
+                    {
+                        //change location to the next one
+                        curCol -= 1;
+                        changeBackground(schoolMap[curRow, curCol]);
+                        Debug.Log(schoolMap[curRow, curCol]);
 
+                        //switching player to appropriate place in new area
+                        playerChar.transform.position = new Vector3(8.24f, playerChar.transform.position.y, playerChar.transform.position.z);
+
+                    }
+                    else if (schoolMap[curRow, curCol - 1] == "lo")
+                    {
+                        Debug.Log("Press space to unlock");
+
+                    }
+                    else
+                    {
+                        Debug.Log("There's nothing there...");
+                    }
                 }
-                else if (schoolMap[curRow, curCol -1] == "lo")
+                catch (System.Exception)
                 {
-                    Debug.Log("Press space to unlock");
-                    
-                }
-                else
-                {
+
                     Debug.Log("There's nothing there...");
                 }
+                
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -120,23 +148,35 @@ public class navigation : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
-                if (schoolMap[curRow - 1, curCol] != "o" && schoolMap[curRow -1, curCol]  != "lo")
+                try
                 {
-                    //change location to the next one
-                    curRow -= 1;
-                    changeBackground(schoolMap[curRow, curCol]);
-                    Debug.Log(schoolMap[curRow, curCol]);
+                    if (schoolMap[curRow - 1, curCol] != "o" && schoolMap[curRow - 1, curCol] != "lo")
+                    {
+                        //change location to the next one
+                        curRow -= 1;
+                        changeBackground(schoolMap[curRow, curCol]);
+                        Debug.Log(schoolMap[curRow, curCol]);
 
+                        //switching player to appropriate place in new area
+                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -4.4f, playerChar.transform.position.z);
+
+                    }
+                    else if (schoolMap[curRow - 1, curCol] == "lo")
+                    {
+                        Debug.Log("Press space to unlock");
+
+                    }
+                    else
+                    {
+                        Debug.Log("There's nothing there...");
+                    }
                 }
-                else if (schoolMap[curRow-1, curCol] == "lo")
+                catch (System.Exception)
                 {
-                    Debug.Log("Press space to unlock");
-                    
-                }
-                else
-                {
+
                     Debug.Log("There's nothing there...");
                 }
+                
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -152,24 +192,36 @@ public class navigation : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
-                if (schoolMap[curRow+1, curCol] != "o" && schoolMap[curRow+1, curCol] != "lo")
+                try
                 {
-                    //change location to the next one
-                    curRow += 1;
-                    changeBackground(schoolMap[curRow, curCol]);
-                    Debug.Log(schoolMap[curRow, curCol]);
+                    if (schoolMap[curRow + 1, curCol] != "o" && schoolMap[curRow + 1, curCol] != "lo")
+                    {
+                        //change location to the next one
+                        curRow += 1;
+                        changeBackground(schoolMap[curRow, curCol]);
+                        Debug.Log(schoolMap[curRow, curCol]);
 
+                        //switching player to appropriate place in new area
+                       playerChar.transform.position = new Vector3(playerChar.transform.position.x, -0.6f, playerChar.transform.position.z);
+
+                    }
+                    else if (schoolMap[curRow + 1, curCol] == "lo")
+                    {
+                        Debug.Log("Press space to unlock");
+
+                    }
+                    else
+                    {
+                        Debug.Log("There's nothing there...");
+
+                    }
                 }
-                else if (schoolMap[curRow+1, curCol] == "lo")
+                catch (System.Exception)
                 {
-                    Debug.Log("Press space to unlock");
-                    
-                }
-                else
-                {
+
                     Debug.Log("There's nothing there...");
-
                 }
+                
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
