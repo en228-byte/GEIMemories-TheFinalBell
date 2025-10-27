@@ -52,7 +52,7 @@ public class navigation : MonoBehaviour
     {
         //checks where player is, to make sure they are someone where it makes sense they can change areas
         //going right
-        if (playerChar.transform.position.x >= 8.25)
+        if (playerChar.transform.position.x >= 8.15)
         {
             //activate move command with E key
             if (Input.GetKeyUp(KeyCode.E))
@@ -144,7 +144,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going up
-        if (playerChar.transform.position.y >= -0.5)
+        if (playerChar.transform.position.y >= 3.5)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -188,7 +188,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going down
-        if (playerChar.transform.position.y <= -4.5)
+        if (playerChar.transform.position.y <= -4.0)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
