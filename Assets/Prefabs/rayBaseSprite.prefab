@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 764864769074026377}
   - component: {fileID: -8222914714146861763}
   - component: {fileID: 5909962755222745835}
+  - component: {fileID: 5013105972695312614}
   m_Layer: 0
   m_Name: rayBaseSprite
   m_TagString: Untagged
@@ -173,3 +174,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deltaX: 0.1
   deltaY: 0.1
+  nextScene: 
+  memory: {fileID: 6580375295166545004, guid: 5bb21eec266dd144c88eb12f7a1eb4da, type: 3}
+--- !u!95 &5013105972695312614
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238540784551618142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

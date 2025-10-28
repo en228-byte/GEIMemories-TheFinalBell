@@ -38,11 +38,11 @@ public class navigation : MonoBehaviour
     {
         curRow = 0;
         curCol = 2;
-        gate1 = schoolMap[0, 5];
-        gate2 = schoolMap[1, 3];
-        gate3 = schoolMap[1, 1];
-        gate4 = schoolMap[3, 5];
-        exitGate = schoolMap[4, 4];
+        gate1 = "lo";
+        gate2 = "lo";
+        gate3 = "lo";
+        gate4 = "lo";
+        exitGate = "lo";
         curBackground = Instantiate(classroom);
         playerChar = Instantiate(playerChar);
     }
@@ -52,7 +52,7 @@ public class navigation : MonoBehaviour
     {
         //checks where player is, to make sure they are someone where it makes sense they can change areas
         //going right
-        if (playerChar.transform.position.x >= 8.15)
+        if (playerChar.transform.position.x >= 9.4)
         {
             //activate move command with E key
             if (Input.GetKeyUp(KeyCode.E))
@@ -100,7 +100,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going left
-        if (playerChar.transform.position.x <= -8.25)
+        if (playerChar.transform.position.x <= -9.4)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -144,7 +144,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going up
-        if (playerChar.transform.position.y >= 3.5)
+        if (playerChar.transform.position.y >= 5.3)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -188,7 +188,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going down
-        if (playerChar.transform.position.y <= -4.0)
+        if (playerChar.transform.position.y <= -9.3)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
