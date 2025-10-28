@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneChanging : MonoBehaviour
 {
     static string lastScene;
+    private void Start()
+    {
+        lastScene = "startScene";
+    }
     public void ChangeScene(string sceneName)
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -17,6 +21,7 @@ public class SceneChanging : MonoBehaviour
         }
         if (sceneName.Contains("gamePlay"))
         {
+            SceneManager.LoadScene(sceneName);
             SceneManager.UnloadSceneAsync(lastScene);
         }
     }
