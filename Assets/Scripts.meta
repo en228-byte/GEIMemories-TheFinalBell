@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts.meta
 guid: d4a94516b392fa645b485832bdc3a141
+========
+guid: 00c6a2c605a36cf4aa36baf232dc2a73
+>>>>>>>> c962325c6a36e0a30ca1d8401f8ab4d1a3211954:Assets/Minigame2/Scripts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
