@@ -13,4 +13,14 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+    GooMonsterController enemy = collision.GetComponent<GooMonsterController>();
+    if (enemy != null)
+    {
+        enemy.TakeDamage(1); // each bullet does 1 damage
+        Destroy(gameObject); // bullet disappears on hit
+    }
+    }
+
 }
