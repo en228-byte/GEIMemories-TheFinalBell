@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class NewBehaviourScript : MonoBehaviour
     public int level = 1;
     int index =0;
 
+    public TMP_Text timerDisplay;
+    public TMP_Text levelDisplay;
+
     DateTime startTime;
     DateTime endTime;
     float timeDown;
@@ -27,27 +31,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //after starting level by clicking NPC fill in sides[] with what the player will have to click
-        for (int i = 0; i < 5; i++)
-        {
-            float temp = UnityEngine.Random.Range(0f, 1f);
-            if (temp > 0.5)
-            {
-                sides[i] = false; //right
-                Debug.Log(sides[i]);
-            }
-            else
-            {
-                sides[i] = true; //left
-                Debug.Log(sides[i]);
-            }
-        }
+        startLevel();
 
-        timeLeft = 5 * speeds[level - 1];
-        timeDown = 0.0f;
-
-        leftHand.GetComponent<SpriteRenderer>().color = Color.gray;
-        rightHand.GetComponent<SpriteRenderer>().color = Color.gray;
     }
 
     // Update is called once per frame
@@ -70,12 +55,14 @@ public class NewBehaviourScript : MonoBehaviour
             inputLocked = true;
             return;
         }
+
         timeLeft -= Time.deltaTime;
+        timerDisplay.text = timeLeft.ToString();
         //Debug.Log(timeLeft);
 
         curSide = sides[index];
 
-        if (Input.GetMouseButton(0) && curSide && timeDown < 1.0)
+        if (Input.GetMouseButton(0) && curSide && timeDown < 1.0 && !inputLocked)
         {
             leftHand.GetComponent<SpriteRenderer>().color = Color.red;
             timeDown += Time.deltaTime;
@@ -89,7 +76,8 @@ public class NewBehaviourScript : MonoBehaviour
         {
             leftHand.GetComponent<SpriteRenderer>().color = Color.black;
         }
-        if (Input.GetMouseButton(1) && !curSide && timeDown < 1.0)
+
+        if (Input.GetMouseButton(1) && !curSide && timeDown < 1.0 && !inputLocked)
         {
             rightHand.GetComponent<SpriteRenderer>().color = Color.red;
             timeDown += Time.deltaTime;
@@ -117,21 +105,23 @@ public class NewBehaviourScript : MonoBehaviour
                 notAlreadyHeld = false;
                 if (index + 1 < sides.Length)
                 {
-                    Debug.Log(curSide);
                     index += 1;
                     timeDown = 0;
+                    leftHand.GetComponent <SpriteRenderer>().color = Color.yellow;
+                    rightHand.GetComponent<SpriteRenderer>().color = Color.yellow;
                 }
                 else
                 {
                     if (level + 1 < 6)
                     {
                         level += 1;
+                        index = 0;
                         Debug.Log("level" + level);
-                        Start();
+                        startLevel();
                     }
                     else
                     {
-                        Debug.Log("You win, gate unlocked");
+                        timerDisplay.text = "You win, gate unlocked";
                         leftHand.SetActive(false);
                         rightHand.SetActive(false);
                         //load gameplay scene
@@ -140,19 +130,40 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
-        //sets colors of hands based on mouse click and curSide
-        
+        //end if timer runs out
+        if (timeLeft < 0)
+        {
+            timerDisplay.text = "You lose. Death awaits";
+            leftHand.SetActive(false);
+            rightHand.SetActive(false);
+        }
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void startLevel()
     {
-        
+        levelDisplay.text = level.ToString();
 
-    }
+        //after starting level by clicking NPC fill in sides[] with what the player will have to click
+        for (int i = 0; i < 5; i++)
+        {
+            float temp = UnityEngine.Random.Range(0f, 1f);
+            if (temp > 0.5)
+            {
+                sides[i] = false; //right
+                Debug.Log(sides[i]);
+            }
+            else
+            {
+                sides[i] = true; //left
+                Debug.Log(sides[i]);
+            }
+        }
 
-    private void checkHits(float timeDown)
-    {
-        
+        timeLeft = 5 * speeds[level - 1];
+        timeDown = 0.0f;
+
+        leftHand.GetComponent<SpriteRenderer>().color = Color.gray;
+        rightHand.GetComponent<SpriteRenderer>().color = Color.gray;
     }
 }
