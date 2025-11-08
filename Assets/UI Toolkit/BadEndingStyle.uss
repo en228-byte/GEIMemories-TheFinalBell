@@ -1,0 +1,30 @@
+.mainbutton {
+    width: 450px;
+    height: 120px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 40px;
+    -unity-font-style: bold;
+    border-left-color: rgba(113, 10, 10, 0.99);
+    border-right-color: rgba(113, 10, 10, 0.99);
+    border-top-color: rgba(113, 10, 10, 0.99);
+    border-bottom-color: rgba(113, 10, 10, 0.99);
+}
+
+.retrybutton {
+    background-color: rgba(178, 45, 45, 0.99);
+}
+
+.retrybutton:hover {
+    background-color: rgba(132, 33, 33, 0.99);
+}
+
+.mainmenubutton {
+    background-color: rgba(84, 83, 83, 0.99);
+}
+
+.mainmenubutton:hover {
+    background-color: rgba(72, 72, 72, 0.99);
+}
