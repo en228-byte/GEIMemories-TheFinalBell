@@ -10,7 +10,7 @@ public class ObjectFallController : MonoBehaviour
     {
         InvokeRepeating("Fall", wait, wait);
     }
-    void Update()
+    void Fall()
     {
         Instantiate(fallingObject, new Vector3(Random.Range(-10, 10), 10, 0), Quaternion.identity);
     }

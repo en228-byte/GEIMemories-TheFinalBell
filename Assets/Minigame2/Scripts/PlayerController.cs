@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     float moveSpeed = 10f;
 
     Rigidbody2D rb;
+
+    public event Action PlayerDied;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Object"))
         {
+            PlayerDied.Invoke();
             Destroy(this.gameObject); 
         }
     }
