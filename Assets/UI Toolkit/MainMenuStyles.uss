@@ -1,0 +1,49 @@
+.mainmenubutton {
+    width: 450px;
+    height: 120px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    -unity-font-style: bold;
+    font-size: 40px;
+    text-shadow: 2px 2px 0 rgba(115, 3, 3, 0.67);
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-left-color: rgba(115, 12, 30, 0.96);
+    border-right-color: rgba(115, 12, 30, 0.96);
+    border-top-color: rgba(115, 12, 30, 0.96);
+    border-bottom-color: rgba(115, 12, 30, 0.96);
+}
+
+.playbutton {
+    background-color: rgba(61, 22, 20, 0.97);
+}
+
+.playbutton:hover {
+    background-color: rgba(87, 2, 16, 0.97);
+}
+
+.continuebutton {
+    background-color: rgb(84, 25, 25);
+}
+
+.continuebutton:hover {
+    background-color: rgb(96, 6, 6);
+}
+
+.settingsbutton {
+    -unity-background-image-tint-color: rgb(0, 0, 0);
+    background-color: rgba(96, 96, 94, 0.97);
+}
+
+.settingsbutton:hover {
+    -unity-background-image-tint-color: rgb(0, 0, 0);
+    background-color: rgba(99, 107, 108, 0.97);
+}
