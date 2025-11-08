@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/GoodEndingStyle.uss?fileID=7433441132597879392&amp;guid=1ee3ecbfda8b5b740a6ea95a09417093&amp;type=3#GoodEndingStyle" />
+    <ui:VisualElement name="GGameBg" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/360_F_265950342_YCOswwfJG3ftDtFEYYqnEA6vd4eBSXbq.jpg?fileID=2800000&amp;guid=7e7f9ea56e97edf46a4d2733fd9ce2c9&amp;type=3#360_F_265950342_YCOswwfJG3ftDtFEYYqnEA6vd4eBSXbq&apos;); -unity-background-image-tint-color: rgb(197, 193, 137); justify-content: center; align-items: center;">
+        <ui:VisualElement name="EndingGoodContainer" style="flex-grow: 0; width: 800px; height: 800px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgba(151, 171, 48, 0.83); border-right-color: rgba(151, 171, 48, 0.83); border-top-color: rgba(151, 171, 48, 0.83); border-bottom-color: rgba(151, 171, 48, 0.83); background-color: rgba(20, 31, 2, 0.47); padding-top: 60px; padding-right: 60px; padding-bottom: 60px; padding-left: 60px;">
+            <ui:Label tabindex="-1" text="REDEMPTION" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EndingGoodHeaderLabel" style="font-size: 70px; -unity-font-style: bold; -unity-text-outline-color: rgba(214, 201, 201, 0); color: rgb(172, 255, 124); -unity-text-align: middle-center;" />
+            <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; justify-content: center; align-items: center;">
+                <ui:Button text="Retry" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RetryButton" class="mainbutton retrybutton" />
+                <ui:Button text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MainMenuButton" class="mainbutton" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
