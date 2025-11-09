@@ -9,7 +9,6 @@ public class playerMovement : MonoBehaviour
     public float deltaX = 120;
     public float deltaY = 120;
 
-    AudioSource step;
 
     private Rigidbody2D rb;
 
@@ -24,7 +23,6 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        step = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
 
         goodMemory1 = Instantiate(memory);
@@ -57,74 +55,48 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
 
-        float horInput = Input.GetAxis("Horizontal");
-        float vertInput = Input.GetAxis("Vertical");
 
         //move forward (left to right)
         if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(3.0f, 0.0f);
-            if (!step.isPlaying)
-            {
-                step.Play();
-            }
+            
         }
         else if (Input.GetKeyUp(KeyCode.D)) {
             rb.velocity = new Vector2(0.0f, 0.0f);
-            if (step.isPlaying)
-            {
-                step.Stop();
-            }
+            
         }
         //move backwards (right to left)
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-3.0f, 0.0f);
-            if (!step.isPlaying)
-            {
-                step.Play();
-            }
+            
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
             rb.velocity = new Vector2(0.0f, 0.0f);
-            if (step.isPlaying)
-            {
-                step.Stop();
-            }
+            
         }
         //move up (down to up)
         if (Input.GetKey(KeyCode.W))
         {
             rb.velocity = new Vector2(0.0f, 3.0f);
-            if (!step.isPlaying)
-            {
-                step.Play();
-            }
+            
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
             rb.velocity = new Vector2(0.0f, 0.0f);
-            if (step.isPlaying)
-            {
-                step.Stop();
-            }
+            
         }
         if (Input.GetKey(KeyCode.S))
         {
             rb.velocity = new Vector2(0.0f, -3.0f);
-            if (!step.isPlaying)
-            {
-                step.Play();
-            }
+            
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
             rb.velocity = new Vector2(0.0f, 0.0f);
-            if (step.isPlaying)
-            {
-                step.Stop();
-            }
+            
         }
 
     }
