@@ -38,12 +38,12 @@
     background-color: rgb(96, 6, 6);
 }
 
-.settingsbutton {
+.exitbutton {
     -unity-background-image-tint-color: rgb(0, 0, 0);
     background-color: rgba(96, 96, 94, 0.97);
 }
 
-.settingsbutton:hover {
+.exitbutton:hover {
     -unity-background-image-tint-color: rgb(0, 0, 0);
     background-color: rgba(99, 107, 108, 0.97);
 }
