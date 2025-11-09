@@ -58,8 +58,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            SceneChanging sceneChanger = new SceneChanging();
-            sceneChanger.ChangeScene("gamePlay");
+
         }
     }
 }
