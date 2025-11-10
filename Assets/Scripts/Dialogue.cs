@@ -1,25 +1,37 @@
+using System; // Required for the Action delegate
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
+    // 1. CHANGE: The event now accepts the specific trigger that just finished talking.
+    public event Action<NPC_DialogueTrigger> OnDialogueEnd; 
+    
     public TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed;
+    private string[] lines; 
+    public float textSpeed = 0.05f; 
     private int index;
-    // Start is called before the first frame update
+
+    // 2. NEW VARIABLE: Stores which NPC started the current conversation.
+    private NPC_DialogueTrigger currentSpeaker; 
+
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
+        gameObject.SetActive(false); 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (lines == null || !gameObject.activeSelf) 
+        {
+            return; 
+        }
+
+        bool advanceInput = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E);
+
+        if (advanceInput)
         {
             if (textComponent.text == lines[index])
             {
@@ -32,12 +44,20 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-    void StartDialogue()
+    
+    // 3. CHANGE: The method now accepts the speaker argument (the specific NPC instance).
+    public void StartConversation(string[] newLines, NPC_DialogueTrigger speaker)
     {
+        lines = newLines; 
+        currentSpeaker = speaker; // Store the speaker
+        
+        gameObject.SetActive(true);
+
         index = 0;
+        textComponent.text = string.Empty; 
         StartCoroutine(TypeLine());
     }
-
+    
     IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
@@ -57,8 +77,12 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            // End of conversation:
+            lines = null; 
             gameObject.SetActive(false);
-
+            
+            // 4. CHANGE: Invoke the event, passing the speaker that just finished.
+            OnDialogueEnd?.Invoke(currentSpeaker); 
         }
     }
 }
