@@ -17,13 +17,13 @@ public class navigation : MonoBehaviour
                                       {"o", "o", "o",  "o", "e", "o"} };
     int curRow;
     int curCol;
-    public string gate1;
-    public string gate2;
-    public string gate3;
-    public string gate4;
-    public string exitGate;
+    public static string gate1;
+    public static string gate2;
+    public static string gate3;
+    public static string gate4;
+    public static string exitGate;
     string[] gates;
-    bool canMove = true;
+    public static bool canMove = true;
 
     public GameObject playerChar;
     public GameObject curBackground;
@@ -46,6 +46,7 @@ public class navigation : MonoBehaviour
         gate4 = "lo";
         exitGate = "lo";
         curBackground = Instantiate(classroom);
+        curBackground.tag = "hide";
         playerChar = Instantiate(playerChar);
 
         curBackground.tag = "hide";
@@ -60,6 +61,14 @@ public class navigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        schoolMap[1, 5] = gate1;
+        schoolMap[3,3] = gate2;
+        schoolMap[3, 1] = gate3;
+        schoolMap[6,5] = gate4;
+        gates[0] = gate1;
+        gates[1] = gate2;
+        gates[2] = gate3;
+        gates[3] = gate4;
         //checks where player is, to make sure they are someone where it makes sense they can change areas
         //going right
         if (playerChar.transform.position.x >= 9.4)
@@ -106,14 +115,17 @@ public class navigation : MonoBehaviour
                 {
                     //schoolMap[curRow, curCol + 1] = "h";
                     //Debug.Log("unlocked");
+
                     int index = 1;
                     foreach (string gate in gates)
                     {
                         if (gate == "lo" && canMove)
-                        { 
+                        {
+                            Debug.Log("test1");
                             SceneChanging sceneChanger = new SceneChanging();
                             sceneChanger.ChangeScene("minigame"+index);
                             canMove = false;
+                            Debug.Log("test2");
                         }
                         index++;
                     }
@@ -157,17 +169,21 @@ public class navigation : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (schoolMap[curRow, curCol + 1] == "lo")
+                if (schoolMap[curRow, curCol - 1] == "lo")
                 {
                     //schoolMap[curRow, curCol + 1] = "h";
                     //Debug.Log("unlocked");
+
+
                     int index = 1;
                     foreach (string gate in gates)
                     {
-                        if (gate == "lo")
+                        Debug.Log(gate1 +  " " + gate);
+                        if (gate == "lo" && canMove)
                         {
                             SceneChanging sceneChanger = new SceneChanging();
                             sceneChanger.ChangeScene("minigame" + index);
+                            canMove = false;
                         }
                         index++;
                     }
@@ -209,19 +225,25 @@ public class navigation : MonoBehaviour
                 }
                 
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space))
             {
-                if (schoolMap[curRow, curCol + 1] == "lo")
+                if (schoolMap[curRow - 1, curCol] == "lo")
                 {
                     //schoolMap[curRow, curCol + 1] = "h";
                     //Debug.Log("unlocked");
+
+                    Debug.Log("test0");
+
                     int index = 1;
                     foreach (string gate in gates)
                     {
-                        if (gate == "lo")
+                        if (gate == "lo" && canMove)
                         {
+                            Debug.Log("test1");
                             SceneChanging sceneChanger = new SceneChanging();
                             sceneChanger.ChangeScene("minigame" + index);
+                            canMove = false;
+                            Debug.Log("test2");
                         }
                         index++;
                     }
@@ -266,17 +288,23 @@ public class navigation : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (schoolMap[curRow, curCol + 1] == "lo")
+                if (schoolMap[curRow + 1, curCol] == "lo")
                 {
                     //schoolMap[curRow, curCol + 1] = "h";
                     //Debug.Log("unlocked");
+
+                    Debug.Log("test0");
+
                     int index = 1;
                     foreach (string gate in gates)
                     {
-                        if (gate == "lo")
+                        if (gate == "lo" && canMove)
                         {
+                            Debug.Log("test1");
                             SceneChanging sceneChanger = new SceneChanging();
                             sceneChanger.ChangeScene("minigame" + index);
+                            canMove = false;
+                            Debug.Log("test2");
                         }
                         index++;
                     }

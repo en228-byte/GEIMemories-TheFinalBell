@@ -34,6 +34,6 @@ public class GameController : MonoBehaviour
 
     public void RetryClicked()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("minigame2");
     }
 }

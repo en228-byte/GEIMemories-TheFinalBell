@@ -1014,10 +1014,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724733868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ae50a15e5e75d4c802119fb6f47e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ce7077edeb9b2f46b29c399b1e841a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
 --- !u!114 &1724733874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  bulletPrefab: {fileID: 4465845866761026249, guid: a6c664d63e52df34d867a32140424835, type: 3}
+  bulletPrefab: {fileID: 4465845866761026249, guid: a3485c6dc71891e4aaba583a3947d786, type: 3}
   firePoint: {fileID: 197494886}
 --- !u!114 &1907569606
 MonoBehaviour:
