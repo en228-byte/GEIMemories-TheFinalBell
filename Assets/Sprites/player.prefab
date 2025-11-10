@@ -168,7 +168,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3732129832051653376}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:Assets/Sprites/player.prefab
   m_Script: {fileID: 11500000, guid: 519fb895c0617fc4bac87cf1ae68e30d, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 43701bf521e115446834c2c9573991ab, type: 3}
+>>>>>>> 5b20add1e9cd70e196ad0c6af6e934a5ae20ef5e:Assets/Minigame1/Prefabs/Bullet.prefab
   m_Name: 
   m_EditorClassIdentifier: 
   deltaX: 0.1

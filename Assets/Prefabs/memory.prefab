@@ -119,8 +119,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:Assets/Prefabs/memory.prefab
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6ffe5fde242ca5040ac919123af4b8b9, type: 3}
+=======
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a214c19ae3c35534fa7a71251e9296c0, type: 3}
+>>>>>>> 5b20add1e9cd70e196ad0c6af6e934a5ae20ef5e:Assets/Minigame2/Prefabs/FallingObject.prefab
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

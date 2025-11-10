@@ -10,12 +10,18 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
+<<<<<<< HEAD
   - Background
   - 
   - 
+=======
+  - Obstacle
+  - Background
+  - Background2
+>>>>>>> 5b20add1e9cd70e196ad0c6af6e934a5ae20ef5e
   - 
   - 
   - 
