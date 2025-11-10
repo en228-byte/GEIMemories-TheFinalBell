@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GooMonsterController : MonoBehaviour
+public class EyeController : MonoBehaviour
 {
     public int health = 5; // 5 hits before it dies
     private SpriteRenderer sr;
