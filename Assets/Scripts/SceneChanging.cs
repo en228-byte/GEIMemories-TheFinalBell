@@ -29,15 +29,27 @@ public class SceneChanging : MonoBehaviour
 
         if (sceneName.Contains("Memory") || sceneName.Contains("minigame"))
         {
+            lastScene = sceneName;
+
             //hide gameplay scene objects
+            /*
             object[] items = GameObject.FindObjectsOfType(typeof(GameObject));
             foreach (object item in items)
             {
                 GameObject current = (GameObject) item;
                 current.SetActive(false);
+                Debug.Log(current.name + "1");
             }
-
+            */
             //load next scene
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var temp = SceneManager.GetSceneAt(i);
+                if (temp.name == sceneName)
+                {
+                    return;
+                }
+            }
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         }
         if (sceneName.Contains("gamePlay"))
@@ -49,12 +61,16 @@ public class SceneChanging : MonoBehaviour
             }
             else
             {
+                /*
                 object[] items = GameObject.FindObjectsOfType(typeof(GameObject));
                 foreach (object item in items)
                 {
                     GameObject current = (GameObject)item;
                     current.SetActive(true);
+                    Debug.Log(current.name + "2");
                 }
+                */
+                SceneManager.UnloadSceneAsync(lastScene);
             }
         }
     }

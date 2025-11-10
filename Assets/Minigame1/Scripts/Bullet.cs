@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-    GooMonsterController enemy = collision.GetComponent<GooMonsterController>();
+    EyeController enemy = collision.GetComponent<EyeController>();
     if (enemy != null)
     {
         enemy.TakeDamage(1); // each bullet does 1 damage

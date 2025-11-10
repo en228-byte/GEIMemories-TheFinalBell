@@ -22,6 +22,8 @@ public class navigation : MonoBehaviour
     public string gate3;
     public string gate4;
     public string exitGate;
+    string[] gates;
+    bool canMove = true;
 
     public GameObject playerChar;
     public GameObject curBackground;
@@ -45,6 +47,14 @@ public class navigation : MonoBehaviour
         exitGate = "lo";
         curBackground = Instantiate(classroom);
         playerChar = Instantiate(playerChar);
+
+        curBackground.tag = "hide";
+        playerChar.tag = "hide";
+        gates = new string[4];
+        gates[0] = gate1;
+        gates[1] = gate2;
+        gates[2] = gate3;
+        gates[3] = gate4;
     }
 
     // Update is called once per frame
@@ -94,8 +104,19 @@ public class navigation : MonoBehaviour
             {
                 if (schoolMap[curRow, curCol +1] == "lo")
                 {
-                    schoolMap[curRow, curCol + 1] = "h";
-                    Debug.Log("unlocked");
+                    //schoolMap[curRow, curCol + 1] = "h";
+                    //Debug.Log("unlocked");
+                    int index = 1;
+                    foreach (string gate in gates)
+                    {
+                        if (gate == "lo" && canMove)
+                        { 
+                            SceneChanging sceneChanger = new SceneChanging();
+                            sceneChanger.ChangeScene("minigame"+index);
+                            canMove = false;
+                        }
+                        index++;
+                    }
                 }
             }
         }
@@ -136,10 +157,20 @@ public class navigation : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (schoolMap[curRow, curCol -1] == "lo")
+                if (schoolMap[curRow, curCol + 1] == "lo")
                 {
-                    schoolMap[curRow, curCol -1] = "h";
-                    Debug.Log("unlocked");
+                    //schoolMap[curRow, curCol + 1] = "h";
+                    //Debug.Log("unlocked");
+                    int index = 1;
+                    foreach (string gate in gates)
+                    {
+                        if (gate == "lo")
+                        {
+                            SceneChanging sceneChanger = new SceneChanging();
+                            sceneChanger.ChangeScene("minigame" + index);
+                        }
+                        index++;
+                    }
                 }
             }
         }
@@ -180,10 +211,20 @@ public class navigation : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (schoolMap[curRow - 1, curCol] == "lo")
+                if (schoolMap[curRow, curCol + 1] == "lo")
                 {
-                    schoolMap[curRow - 1, curCol] = "h";
-                    Debug.Log("unlocked");
+                    //schoolMap[curRow, curCol + 1] = "h";
+                    //Debug.Log("unlocked");
+                    int index = 1;
+                    foreach (string gate in gates)
+                    {
+                        if (gate == "lo")
+                        {
+                            SceneChanging sceneChanger = new SceneChanging();
+                            sceneChanger.ChangeScene("minigame" + index);
+                        }
+                        index++;
+                    }
                 }
             }
         }
@@ -225,10 +266,20 @@ public class navigation : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (schoolMap[curRow + 1, curCol] == "lo")
+                if (schoolMap[curRow, curCol + 1] == "lo")
                 {
-                    schoolMap[curRow + 1, curCol] = "h";
-                    Debug.Log("unlocked");
+                    //schoolMap[curRow, curCol + 1] = "h";
+                    //Debug.Log("unlocked");
+                    int index = 1;
+                    foreach (string gate in gates)
+                    {
+                        if (gate == "lo")
+                        {
+                            SceneChanging sceneChanger = new SceneChanging();
+                            sceneChanger.ChangeScene("minigame" + index);
+                        }
+                        index++;
+                    }
                 }
             }
         }
