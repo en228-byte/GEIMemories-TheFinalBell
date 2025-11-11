@@ -58,6 +58,8 @@ public class PlayerRunner : MonoBehaviour
             // camera shake
             if (camShake) StartCoroutine(camShake.Shake(0.2f, 0.15f));
 
+            GetComponent<SpriteFlash>()?.Trigger();
+            
             // chaser surge
             var chaser = FindObjectOfType<ChaserCreeper>();
             if (chaser) chaser.AddAggro(0.8f);

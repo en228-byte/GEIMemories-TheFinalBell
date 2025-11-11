@@ -2,13 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public Transform player;
+    public Transform door;
+    public TextMeshProUGUI distanceText;
     public GameObject winPanel;
     public GameObject losePanel;
 
     private bool frozen = false;
+
+    void Update()
+    {
+        if (player && door && distanceText)
+        {
+            float remaining = Mathf.Max(0f, door.position.y - player.position.y);
+            distanceText.text = $"Door: {Mathf.CeilToInt(remaining)} m";
+        }
+    }
 
     public void Win()
     {
