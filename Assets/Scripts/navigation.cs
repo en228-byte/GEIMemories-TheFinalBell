@@ -48,8 +48,6 @@ public class navigation : MonoBehaviour
         curBackground = Instantiate(classroom);
         curBackground.tag = "hide";
         playerChar = Instantiate(playerChar);
-
-        curBackground.tag = "hide";
         playerChar.tag = "hide";
         gates = new string[4];
         gates[0] = gate1;
@@ -87,6 +85,8 @@ public class navigation : MonoBehaviour
                         curCol += 1;
                         changeBackground(schoolMap[curRow, curCol]);
                         Debug.Log(schoolMap[curRow, curCol]);
+                        curBackground.tag = "hide";
+
 
                         //switching player to appropriate place in new area
                         playerChar.transform.position = new Vector3(-8.24f, playerChar.transform.position.y, playerChar.transform.position.z);
@@ -145,6 +145,8 @@ public class navigation : MonoBehaviour
                         curCol -= 1;
                         changeBackground(schoolMap[curRow, curCol]);
                         Debug.Log(schoolMap[curRow, curCol]);
+                        curBackground.tag = "hide";
+
 
                         //switching player to appropriate place in new area
                         playerChar.transform.position = new Vector3(8.24f, playerChar.transform.position.y, playerChar.transform.position.z);
@@ -203,6 +205,8 @@ public class navigation : MonoBehaviour
                         curRow -= 1;
                         changeBackground(schoolMap[curRow, curCol]);
                         Debug.Log(schoolMap[curRow, curCol]);
+                        curBackground.tag = "hide";
+
 
                         //switching player to appropriate place in new area
                         playerChar.transform.position = new Vector3(playerChar.transform.position.x, -4.4f, playerChar.transform.position.z);
@@ -263,9 +267,11 @@ public class navigation : MonoBehaviour
                         curRow += 1;
                         changeBackground(schoolMap[curRow, curCol]);
                         Debug.Log(schoolMap[curRow, curCol]);
+                        curBackground.tag = "hide";
+
 
                         //switching player to appropriate place in new area
-                       playerChar.transform.position = new Vector3(playerChar.transform.position.x, -0.6f, playerChar.transform.position.z);
+                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -0.6f, playerChar.transform.position.z);
 
                     }
                     else if (schoolMap[curRow + 1, curCol] == "lo")

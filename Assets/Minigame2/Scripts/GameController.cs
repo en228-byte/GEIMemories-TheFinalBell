@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
+    //added for gate mechanics
+    float timer = 10;
 
     public Canvas GameOverCanvas;
 
@@ -32,8 +34,25 @@ public class GameController : MonoBehaviour
         }
     }
 
+    //editted for gate mechanics
     public void RetryClicked()
     {
-        SceneManager.LoadScene("minigame2");
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("minigame2");
+        SceneManager.UnloadSceneAsync("minigame2");
+    }
+
+    //added for gate mechanics
+    private void Update()
+    {
+        Debug.Log("You win");
+        timer -= Time.deltaTime;
+        if (timer <= 0 && !GameOverCanvas.gameObject.activeSelf)
+        {
+            SceneChanging sceneChanger = new SceneChanging();
+            sceneChanger.ChangeScene("gamePlay");
+            navigation.gate2 = "h";
+            navigation.canMove = true;
+        }
     }
 }

@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     bool[] sides = new bool[5];
     int[] numHits = { 3, 5, 5, 7, 7 };
-    float[] speeds = { 5f, 5f, 3f, 3f, 1.5f };
+    float[] speeds = { 5f, 5f, 3f, 3f, 2f };
     bool playerSide;
     bool curSide;
     bool notAlreadyHeld = true;
@@ -122,9 +122,14 @@ public class NewBehaviourScript : MonoBehaviour
                     else
                     {
                         timerDisplay.text = "You win, gate unlocked";
+                        Debug.Log("You win");
                         leftHand.SetActive(false);
                         rightHand.SetActive(false);
                         //load gameplay scene
+                        SceneChanging sceneChanger = new SceneChanging();
+                        sceneChanger.ChangeScene("gamePlay");
+                        navigation.gate4 = "h";
+                        navigation.canMove = true;
                     }
                 }
             }
@@ -134,6 +139,8 @@ public class NewBehaviourScript : MonoBehaviour
         if (timeLeft < 0)
         {
             timerDisplay.text = "You lose. Death awaits";
+            SceneChanging sceneChanger = new SceneChanging();
+            sceneChanger.ChangeScene("minigame4");
             leftHand.SetActive(false);
             rightHand.SetActive(false);
         }

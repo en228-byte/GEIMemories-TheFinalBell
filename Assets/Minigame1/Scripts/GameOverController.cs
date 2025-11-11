@@ -22,8 +22,9 @@ public class GameOverController : MonoBehaviour
     public void Retry()
     {
         Time.timeScale = 1f;
-        var s = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(s.name);
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("minigame1");
+        SceneManager.UnloadSceneAsync("minigame1");
     }
 }
 
