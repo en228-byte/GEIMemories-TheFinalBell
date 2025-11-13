@@ -4,9 +4,12 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
 
+    // +1 = right, -1 = left
+    [HideInInspector] public float direction = 1f;
+
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
     }
 
     private void OnBecameInvisible()
@@ -19,7 +22,7 @@ public class Bullet : MonoBehaviour
     if (enemy != null)
     {
         enemy.TakeDamage(1); // each bullet does 1 damage
-        Destroy(gameObject); // bullet disappears on hit
+        Destroy(gameObject);
     }
     }
 
