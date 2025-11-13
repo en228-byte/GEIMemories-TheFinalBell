@@ -1,9 +1,15 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class EyeController : MonoBehaviour
 {
-    public int health = 5; // 5 hits before it dies
+    public int health = 5;
+    [Header("Boss Settings")]
+    public bool isBoss = false;
+    public UnityEvent onBossDeath;
+
     private SpriteRenderer sr;
     private Color originalColor;
 
@@ -33,6 +39,10 @@ public class EyeController : MonoBehaviour
 
     void Die()
     {
+        if (isBoss && onBossDeath != null)
+        {
+            onBossDeath.Invoke();
+        }
         Destroy(gameObject);
     }
 }

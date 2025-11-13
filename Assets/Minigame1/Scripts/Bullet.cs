@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -6,24 +8,34 @@ public class Bullet : MonoBehaviour
 
     // +1 = right, -1 = left
     [HideInInspector] public float direction = 1f;
+    public float lifeTime = 2f;
+    public int damage = 1;
+    float lifeTimer = 0f;
 
     void Update()
     {
+        // bullet movement
         transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
+
+        lifeTimer += Time.deltaTime;
+        if (lifeTimer >= lifeTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-    EyeController enemy = collision.GetComponent<EyeController>();
-    if (enemy != null)
-    {
-        enemy.TakeDamage(1); // each bullet does 1 damage
-        Destroy(gameObject);
+        EyeController enemyHealth = collision.GetComponent<EyeController>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
-    }
-
 }
