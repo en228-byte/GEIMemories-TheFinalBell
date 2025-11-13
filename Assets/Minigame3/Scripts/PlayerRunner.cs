@@ -56,7 +56,10 @@ public class PlayerRunner : MonoBehaviour
             forwardSpeed = Mathf.Max(minForwardSpeed, forwardSpeed - onHitSlowdown);
 
             // camera shake
-            if (camShake) StartCoroutine(camShake.Shake(0.2f, 0.15f));
+            // if (camShake) StartCoroutine(camShake.Shake(0.2f, 0.15f));
+            var cam = Camera.main.GetComponent<CameraShake>();
+            if (cam != null)
+                StartCoroutine(cam.Shake(0.2f, 0.15f));
 
             GetComponent<SpriteFlash>()?.Trigger();
             
