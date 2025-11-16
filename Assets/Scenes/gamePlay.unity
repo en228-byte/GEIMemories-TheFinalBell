@@ -123,11 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!1 &513689471
-========
---- !u!1 &643981052
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,15 +131,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   - component: {fileID: 513689474}
   - component: {fileID: 513689473}
   - component: {fileID: 513689472}
-========
-  - component: {fileID: 643981055}
-  - component: {fileID: 643981054}
-  - component: {fileID: 643981053}
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -151,35 +141,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!81 &513689472
-========
---- !u!81 &643981053
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   m_GameObject: {fileID: 513689471}
   m_Enabled: 1
 --- !u!20 &513689473
-========
-  m_GameObject: {fileID: 643981052}
-  m_Enabled: 1
---- !u!20 &643981054
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   m_GameObject: {fileID: 513689471}
-========
-  m_GameObject: {fileID: 643981052}
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
@@ -224,21 +200,13 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!4 &513689474
-========
---- !u!4 &643981055
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   m_GameObject: {fileID: 513689471}
-========
-  m_GameObject: {fileID: 643981052}
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
@@ -247,11 +215,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!1 &1097475572
-========
---- !u!1 &728880076
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,34 +223,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   - component: {fileID: 1097475574}
   - component: {fileID: 1097475573}
   m_Layer: 0
   m_Name: Timeline
-========
-  - component: {fileID: 728880078}
-  - component: {fileID: 728880077}
-  m_Layer: 0
-  m_Name: decayedclassroom
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!320 &1097475573
 PlayableDirector:
-========
---- !u!212 &728880077
-SpriteRenderer:
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   m_GameObject: {fileID: 1097475572}
   m_Enabled: 1
   serializedVersion: 3
@@ -299,82 +250,21 @@ SpriteRenderer:
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1097475574
-========
-  m_GameObject: {fileID: 728880076}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b48c3d7a18a05354eb547b2ce7af196f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &728880078
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   m_GameObject: {fileID: 1097475572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.7812595, y: -1.2577232, z: -0.18732607}
   m_LocalScale: {x: 1, y: 1, z: 1}
-========
-  m_GameObject: {fileID: 728880076}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.93, y: 0.93, z: 1}
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!1 &1522632363
-========
---- !u!1 &1246003874
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -382,103 +272,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   - component: {fileID: 1522632365}
   - component: {fileID: 1522632366}
   - component: {fileID: 1522632367}
   m_Layer: 0
   m_Name: scriptObject
-========
-  - component: {fileID: 1246003876}
-  - component: {fileID: 1246003875}
-  m_Layer: 0
-  m_Name: updatedray
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!4 &1522632365
-========
---- !u!212 &1246003875
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246003874}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f3a108f3c0377f24c923b84022e63a91, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 4.38, y: 5.7}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1246003876
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   m_GameObject: {fileID: 1522632363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.91, y: -0.35, z: -0.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
-========
-  m_GameObject: {fileID: 1246003874}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
 --- !u!114 &1522632366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,18 +341,76 @@ PlayableDirector:
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
-========
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
+--- !u!1001 &1599755450
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_Name
+      value: classroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546938647517184956, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-<<<<<<<< HEAD:Assets/Scenes/gamePlay.unity
   - {fileID: 1522632365}
   - {fileID: 513689474}
   - {fileID: 1097475574}
-========
-  - {fileID: 643981055}
-  - {fileID: 728880078}
-  - {fileID: 1246003876}
->>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity
+  - {fileID: 1599755450}
