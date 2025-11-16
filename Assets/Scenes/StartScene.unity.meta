@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/StartScene.unity.meta
 guid: 78840561616209944abd38d19c9f669d
+========
+guid: 7d99cb42d5f6210418b40cbb49e47000
+>>>>>>>> origin/assets:Assets/Scenes/gamePlay.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
