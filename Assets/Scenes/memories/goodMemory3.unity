@@ -630,7 +630,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
---- !u!1 &1309806142
+--- !u!1 &1433157424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1428668581419993120, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
+  m_PrefabInstance: {fileID: 1229534688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1433157425 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7157715385361043155, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
+  m_PrefabInstance: {fileID: 1229534688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1477090906
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -638,22 +648,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1309806144}
-  - component: {fileID: 1309806143}
+  - component: {fileID: 1477090908}
+  - component: {fileID: 1477090907}
   m_Layer: 0
-  m_Name: cafeteria
+  m_Name: cafefin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1309806143
+--- !u!212 &1477090907
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309806142}
+  m_GameObject: {fileID: 1477090906}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -688,7 +698,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34e70575e685e0a4d8d28c69ab241f35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7523ce8f7a8fb3640b307530d2b5849e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -699,13 +709,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1309806144
+--- !u!4 &1477090908
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309806142}
+  m_GameObject: {fileID: 1477090906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -714,16 +724,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1433157424 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1428668581419993120, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-  m_PrefabInstance: {fileID: 1229534688}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1433157425 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7157715385361043155, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-  m_PrefabInstance: {fileID: 1229534688}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1496865342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,8 +1073,8 @@ SceneRoots:
   - {fileID: 1546714736}
   - {fileID: 346420600}
   - {fileID: 352031964}
-  - {fileID: 1309806144}
   - {fileID: 832420875}
   - {fileID: 1963558156}
   - {fileID: 2088489417}
   - {fileID: 569336287}
+  - {fileID: 1477090908}
