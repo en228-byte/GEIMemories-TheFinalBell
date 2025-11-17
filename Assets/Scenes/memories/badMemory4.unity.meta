@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/memories/badMemory4.unity.meta
 guid: 428c9df88ab555c4fa463a0f338339fe
+========
+guid: 78840561616209944abd38d19c9f669d
+>>>>>>>> minigames:Assets/Scenes/StartScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

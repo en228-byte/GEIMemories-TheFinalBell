@@ -6,16 +6,17 @@ TagManager:
   tags:
   - Object
   - Enemy
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
+  - Obstacle
   - Background
-  - 
-  - 
+  - Background2
   - 
   - 
   - 
@@ -42,10 +43,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 3991163547
-    locked: 0
-  - name: Player
-    uniqueID: 385461753
     locked: 0
