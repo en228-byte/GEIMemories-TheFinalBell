@@ -44,7 +44,9 @@ public class navigation : MonoBehaviour
         gate4 = "lo";
         exitGate = "lo";
         curBackground = Instantiate(classroom);
+        curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
         playerChar = Instantiate(playerChar);
+        playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
     }
 
     // Update is called once per frame
@@ -231,11 +233,7 @@ public class navigation : MonoBehaviour
                     Debug.Log("unlocked");
                 }
             }
-        }
-
-
-        //space to unlock gates
-        
+        }        
     }
     void changeBackground(string newBackground)
     {
@@ -243,26 +241,32 @@ public class navigation : MonoBehaviour
         if (newBackground == "h")
         {
             curBackground = Instantiate(hallway);
+            playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         }
         if (newBackground == "cl")
         {
             curBackground = Instantiate(classroom);
+            playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         }
         if (newBackground == "ca")
         {
             curBackground = Instantiate(cafeteria);
+            playerChar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
         if (newBackground == "p")
         {
             curBackground = Instantiate(office);
+            playerChar.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
         }
         if (newBackground == "l")
         {
             curBackground = Instantiate(library);
+            playerChar.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
         }
         if (newBackground == "g")
         {
             curBackground = Instantiate(gym);
+            playerChar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
     }
 }

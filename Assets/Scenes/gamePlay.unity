@@ -314,7 +314,7 @@ MonoBehaviour:
   gate3: 
   gate4: 
   exitGate: 
-  playerChar: {fileID: 6238540784551618142, guid: 46c1a6c4a57f77d49979148e8b0f2df2, type: 3}
+  playerChar: {fileID: 4344952155782539672, guid: 81626b2b57f1bf847b0a7aa1eb54be86, type: 3}
   curBackground: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
   hallway: {fileID: 7959052316834380925, guid: cb3d9cbb48c4de741a36a9f8bffd6540, type: 3}
   classroom: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
