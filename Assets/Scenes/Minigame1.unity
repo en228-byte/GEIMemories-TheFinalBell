@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  nextEnemy: {fileID: 876014106}
   isBoss: 0
   onBossDeath:
     m_PersistentCalls:
@@ -969,6 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
+  nextEnemy: {fileID: 1348178697}
   isBoss: 0
   onBossDeath:
     m_PersistentCalls:
@@ -1431,6 +1433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  nextEnemy: {fileID: 0}
   isBoss: 1
   onBossDeath:
     m_PersistentCalls:
@@ -1947,7 +1950,7 @@ Transform:
   m_GameObject: {fileID: 1724733868}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -1, z: 0}
+  m_LocalPosition: {x: 6, y: -1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1966,6 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  nextEnemy: {fileID: 636029931}
   isBoss: 0
   onBossDeath:
     m_PersistentCalls:
