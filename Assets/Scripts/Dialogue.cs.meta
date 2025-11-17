@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Dialogue.cs.meta
 guid: 196a19f2595c9544f91348951a91ac9b
+=======
+guid: 43701bf521e115446834c2c9573991ab
+>>>>>>> 5b20add1e9cd70e196ad0c6af6e934a5ae20ef5e:Assets/Minigame1/Scripts/Bullet.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

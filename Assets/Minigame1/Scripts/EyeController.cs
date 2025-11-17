@@ -34,5 +34,11 @@ public class EyeController : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+
+        //added for gates
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("gamePlay");
+        navigation.gate1 = "h";
+        navigation.canMove = true;
     }
 }

@@ -26,6 +26,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/memories/goodMemory3.unity
     guid: e982c28d02336c3419da31f582557f70
+  - enabled: 1
+    path: Assets/Scenes/Minigame1.unity
+    guid: f92a1dca09d2c044daaadba4c1178bb8
+  - enabled: 1
+    path: Assets/Scenes/Minigame2.unity
+    guid: 32be20667942ea54687a4523df243c84
+  - enabled: 1
+    path: Assets/Scenes/Minigame3.unity
+    guid: a79242d6c523f554d96fe1758fc91a6a
+  - enabled: 1
+    path: Assets/Scenes/Minigame4.unity
+    guid: 3af431cb36bc45f40bbff5800943c154
   - enabled: 0
     path: Assets/Scenes/Movment.unity
     guid: 2cda990e2423bbf4892e6590ba056729
