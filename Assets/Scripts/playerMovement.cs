@@ -13,49 +13,10 @@ public class playerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     public string nextScene;
-    public GameObject memory;
-    GameObject goodMemory1;
-    GameObject goodMemory2;
-    GameObject goodMemory3;
-    GameObject badMemory1;
-    GameObject badMemory2;
-
-    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        goodMemory1 = Instantiate(memory);
-        goodMemory1.transform.position = new Vector3(-5.0f, 0.0f, 0.0f);
-        goodMemory1.name = "goodMemory1";
-        goodMemory1.tag = "hide";
-
-        badMemory1 = Instantiate(memory);
-        badMemory1.transform.position = new Vector3(6.0f, 5.0f, 0.0f);
-        badMemory1.name = "badMemory1";
-        badMemory1.tag = "hide";
-
-        goodMemory2 = Instantiate(memory);
-        goodMemory2.transform.position = new Vector3(0.5f, 4.75f, 0.0f);
-        goodMemory2.name = "goodMemory2";
-        goodMemory2.SetActive(false);
-        goodMemory2.tag = "hide";
-
-        badMemory2 = Instantiate(memory);
-        badMemory2.transform.position = new Vector3(6.0f, -7.0f, 0.0f);
-        badMemory2.name = "badMemory2";
-        badMemory2.SetActive(false);
-        badMemory2.tag = "hide";
-
-        goodMemory3 = Instantiate(memory);
-        goodMemory3.transform.position = new Vector3(0.5f, 7.76f, 0.0f);
-        goodMemory3.name = "goodMemory3";
-        goodMemory3.SetActive(false);
-        goodMemory3.tag = "hide";
-        GameObject[] memories = { goodMemory1, badMemory1, goodMemory2, badMemory2, goodMemory3 };
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -67,7 +28,7 @@ public class playerMovement : MonoBehaviour
             //move forward (left to right)
             if (Input.GetKey(KeyCode.D))
             {
-                rb.velocity = new Vector2(3.0f, 0.0f);
+                rb.velocity = new Vector2(4.0f, 0.0f);
                 
             }
             else if (Input.GetKeyUp(KeyCode.D))
@@ -78,7 +39,7 @@ public class playerMovement : MonoBehaviour
             //move backwards (right to left)
             if (Input.GetKey(KeyCode.A))
             {
-                rb.velocity = new Vector2(-3.0f, 0.0f);
+                rb.velocity = new Vector2(-4.0f, 0.0f);
                 
             }
             else if (Input.GetKeyUp(KeyCode.A))
@@ -89,7 +50,7 @@ public class playerMovement : MonoBehaviour
             //move up (down to up)
             if (Input.GetKey(KeyCode.W))
             {
-                rb.velocity = new Vector2(0.0f, 3.0f);
+                rb.velocity = new Vector2(0.0f, 4.0f);
                 
             }
             else if (Input.GetKeyUp(KeyCode.W))
@@ -99,7 +60,7 @@ public class playerMovement : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S))
             {
-                rb.velocity = new Vector2(0.0f, -3.0f);
+                rb.velocity = new Vector2(0.0f, -4.0f);
                
             }
             else if (Input.GetKeyUp(KeyCode.S))
@@ -109,7 +70,7 @@ public class playerMovement : MonoBehaviour
             }
 
         }
-
+    /*
     private void OnTriggerStay2D(UnityEngine.Collider2D collision)
     {
         if (collision.gameObject.name == "goodMemory1")
@@ -165,6 +126,7 @@ public class playerMovement : MonoBehaviour
             }
         }
     }
+    */
     public static GameObject Get(GameObject obj)
     {
         return obj;

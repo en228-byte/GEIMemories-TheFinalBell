@@ -51,7 +51,6 @@ public class hidePlay : MonoBehaviour
                         {
                             break;
                         }
-                        Debug.Log(current.name + "invisible");
                     }
                     catch
                     {
@@ -61,7 +60,6 @@ public class hidePlay : MonoBehaviour
                 }
             } else
             {
-                Debug.Log("hide Test 1");
                 foreach (GameObject item in GameObject.FindGameObjectsWithTag("hide"))
                 {
                     //makes them visible

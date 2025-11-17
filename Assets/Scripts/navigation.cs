@@ -46,11 +46,10 @@ public class navigation : MonoBehaviour
         gate4 = "lo";
         exitGate = "lo";
         curBackground = Instantiate(classroom);
-        curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
         playerChar = Instantiate(playerChar);
         playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
         curBackground.tag = "hide";
-        playerChar = Instantiate(playerChar);
         playerChar.tag = "hide";
         gates = new string[4];
         gates[0] = gate1;
@@ -72,7 +71,7 @@ public class navigation : MonoBehaviour
         gates[3] = gate4;
         //checks where player is, to make sure they are someone where it makes sense they can change areas
         //going right
-        if (playerChar.transform.position.x >= 9.4)
+        if (playerChar.transform.position.x >= 17)
         {
             //activate move command with E key
             if (Input.GetKeyUp(KeyCode.E))
@@ -92,7 +91,7 @@ public class navigation : MonoBehaviour
 
 
                         //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(-8.24f, playerChar.transform.position.y, playerChar.transform.position.z);
+                        playerChar.transform.position = new Vector3(-16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
                     }
                     else if (schoolMap[curRow, curCol + 1] == "lo")
                     {
@@ -136,7 +135,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going left
-        if (playerChar.transform.position.x <= -9.4)
+        if (playerChar.transform.position.x <= -17)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -152,7 +151,7 @@ public class navigation : MonoBehaviour
 
 
                         //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(8.24f, playerChar.transform.position.y, playerChar.transform.position.z);
+                        playerChar.transform.position = new Vector3(16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
 
                     }
                     else if (schoolMap[curRow, curCol - 1] == "lo")
@@ -196,7 +195,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going up
-        if (playerChar.transform.position.y >= 5.3)
+        if (playerChar.transform.position.y >= 6)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -212,7 +211,7 @@ public class navigation : MonoBehaviour
 
 
                         //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -4.4f, playerChar.transform.position.z);
+                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -8.5f, playerChar.transform.position.z);
 
                     }
                     else if (schoolMap[curRow - 1, curCol] == "lo")
@@ -258,7 +257,7 @@ public class navigation : MonoBehaviour
             }
         }
         //going down
-        if (playerChar.transform.position.y <= -9.3)
+        if (playerChar.transform.position.y <= -9)
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -274,7 +273,7 @@ public class navigation : MonoBehaviour
 
 
                         //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -0.6f, playerChar.transform.position.z);
+                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, 6f, playerChar.transform.position.z);
 
                     }
                     else if (schoolMap[curRow + 1, curCol] == "lo")
@@ -354,5 +353,6 @@ public class navigation : MonoBehaviour
             curBackground = Instantiate(gym);
             playerChar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
+        curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
     }
 }
