@@ -8,6 +8,8 @@ public class PlayerShooterController : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public AudioSource audioSource;
+    public AudioClip shootSFX;
 
     Vector2 moveInput;
     bool isFacingRight = true;
@@ -44,6 +46,7 @@ public class PlayerShooterController : MonoBehaviour
 
     void Shoot()
     {
+        audioSource.PlayOneShot(shootSFX);
         GameObject b = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         Bullet bulletScript = b.GetComponent<Bullet>();
 
