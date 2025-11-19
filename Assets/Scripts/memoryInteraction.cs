@@ -18,7 +18,7 @@ public class memoryInteraction : MonoBehaviour
     GameObject badMemory3;
     GameObject badMemory4;
     GameObject badMemory5;
-    GameObject[] memories;
+    public static GameObject[] memories;
 
 
     private void Start()
@@ -27,7 +27,7 @@ public class memoryInteraction : MonoBehaviour
         for (int i = 0; i < memories.Length; i++)
         {
             memories[i] = Instantiate(memory);
-            memories[i].tag = "hide";
+            //memories[i].tag = "hide";
             if (i < 5)
             {
                 memories[i].name = "goodMemory" + (i + 1);
@@ -66,6 +66,86 @@ public class memoryInteraction : MonoBehaviour
                     sceneChanger.ChangeScene(nextScene);
                     Destroy(collision.gameObject);
                 }
+            }
+        }
+    }
+
+    public static void hideOutside(string newBackground)
+    {
+        for (int i = 0; i < memories.Length; i++)
+        {
+            Debug.Log(memories[i]);
+            try
+            {
+                memories[i].GetComponent<SpriteRenderer>().enabled = true;
+                if (newBackground == "h")
+                {
+                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (newBackground == "cl")
+                {
+                    if (i == 0)
+                    {
+                        continue;
+                    }
+                    if (i == 5)
+                    {
+                        continue;
+                    }
+                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (newBackground == "ca")
+                {
+                    if (i == 2)
+                    {
+                        continue;
+                    }
+                    if (i == 7)
+                    {
+                        continue;
+                    }
+                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (newBackground == "p")
+                {
+                    if (i == 4)
+                    {
+                        continue;
+                    }
+                    if (i == 9)
+                    {
+                        continue;
+                    }
+                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (newBackground == "l")
+                {
+                    if (i == 3)
+                    {
+                        continue;
+                    }
+                    if (i == 8)
+                    {
+                        continue;
+                    }
+                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (newBackground == "g")
+                {
+                    if (i == 1)
+                    {
+                        continue;
+                    }
+                    if (i == 6)
+                    {
+                        continue;
+                    }
+                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
+            catch (MissingReferenceException)
+            {
+                continue;
             }
         }
     }

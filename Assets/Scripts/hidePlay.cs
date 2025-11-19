@@ -75,7 +75,6 @@ public class hidePlay : MonoBehaviour
                         {
                             break;
                         }
-                        Debug.Log(current.name + "visible");
                     }
                     catch
                     {

@@ -310,11 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be8b3704d8b0624abbf4187244210bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gate1: 
-  gate2: 
-  gate3: 
-  gate4: 
-  exitGate: 
   playerChar: {fileID: 4344952155782539672, guid: 81626b2b57f1bf847b0a7aa1eb54be86, type: 3}
   curBackground: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
   hallway: {fileID: 7959052316834380925, guid: cb3d9cbb48c4de741a36a9f8bffd6540, type: 3}

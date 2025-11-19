@@ -50,6 +50,7 @@ public class navigation : MonoBehaviour
         playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
         curBackground.tag = "hide";
+        curBackground.name = "cl";
         playerChar.tag = "hide";
         gates = new string[4];
         gates[0] = gate1;
@@ -69,6 +70,9 @@ public class navigation : MonoBehaviour
         gates[1] = gate2;
         gates[2] = gate3;
         gates[3] = gate4;
+
+        memoryInteraction.hideOutside(curBackground.name);
+
         //checks where player is, to make sure they are someone where it makes sense they can change areas
         //going right
         if (playerChar.transform.position.x >= 17)
@@ -86,6 +90,7 @@ public class navigation : MonoBehaviour
                         //change location to the next one
                         curCol += 1;
                         changeBackground(schoolMap[curRow, curCol]);
+                        curBackground.name = schoolMap[curRow, curCol];
                         Debug.Log(schoolMap[curRow, curCol]);
                         curBackground.tag = "hide";
 
@@ -146,6 +151,7 @@ public class navigation : MonoBehaviour
                         //change location to the next one
                         curCol -= 1;
                         changeBackground(schoolMap[curRow, curCol]);
+                        curBackground.name = schoolMap[curRow, curCol];
                         Debug.Log(schoolMap[curRow, curCol]);
                         curBackground.tag = "hide";
 
@@ -206,6 +212,7 @@ public class navigation : MonoBehaviour
                         //change location to the next one
                         curRow -= 1;
                         changeBackground(schoolMap[curRow, curCol]);
+                        curBackground.name = schoolMap[curRow, curCol];
                         Debug.Log(schoolMap[curRow, curCol]);
                         curBackground.tag = "hide";
 
@@ -268,6 +275,7 @@ public class navigation : MonoBehaviour
                         //change location to the next one
                         curRow += 1;
                         changeBackground(schoolMap[curRow, curCol]);
+                        curBackground.name = schoolMap[curRow, curCol];
                         Debug.Log(schoolMap[curRow, curCol]);
                         curBackground.tag = "hide";
 

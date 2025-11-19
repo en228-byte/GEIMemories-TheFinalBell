@@ -127,8 +127,5 @@ public class playerMovement : MonoBehaviour
         }
     }
     */
-    public static GameObject Get(GameObject obj)
-    {
-        return obj;
-    }
+
 }
