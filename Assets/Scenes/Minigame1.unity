@@ -542,10 +542,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 636029931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ae50a15e5e75d4c802119fb6f47e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ce7077edeb9b2f46b29c399b1e841a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 18
   nextEnemy: {fileID: 876014106}
   isBoss: 0
   onBossDeath:
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 876014106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ae50a15e5e75d4c802119fb6f47e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ce7077edeb9b2f46b29c399b1e841a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
@@ -1557,10 +1557,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1348178697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ae50a15e5e75d4c802119fb6f47e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ce7077edeb9b2f46b29c399b1e841a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 40
   nextEnemy: {fileID: 0}
   isBoss: 1
   onBossDeath:
@@ -1590,7 +1590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e78eab497e1172469ac56abde8541f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 2.5
 --- !u!70 &1348178703
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2093,10 +2093,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724733868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ae50a15e5e75d4c802119fb6f47e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ce7077edeb9b2f46b29c399b1e841a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 10
   nextEnemy: {fileID: 636029931}
   isBoss: 0
   onBossDeath:
@@ -2561,12 +2561,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907569600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f06d86cacbf9d2d4e854157cd43866ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bb368bf8529e724baed2e8f4c009701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 1907569602}
-  bulletPrefab: {fileID: 4465845866761026249, guid: a6c664d63e52df34d867a32140424835, type: 3}
+  bulletPrefab: {fileID: 4465845866761026249, guid: a3485c6dc71891e4aaba583a3947d786, type: 3}
   firePoint: {fileID: 197494886}
   audioSource: {fileID: 1907569607}
   shootSFX: {fileID: 8300000, guid: b2010d7c0936638409a226a61b6a46af, type: 3}
