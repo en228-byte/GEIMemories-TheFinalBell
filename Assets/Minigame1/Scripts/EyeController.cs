@@ -1,9 +1,18 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class EyeController : MonoBehaviour
 {
-    public int health = 5; // 5 hits before it dies
+    public int health = 5;
+
+    [Header("Chain Enemies")]
+    public GameObject nextEnemy;
+
+    [Header("Boss Settings")]
+    public bool isBoss = false;
+    public UnityEvent onBossDeath;
+
     private SpriteRenderer sr;
     private Color originalColor;
 
@@ -11,6 +20,8 @@ public class EyeController : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
+        if (nextEnemy != null)
+            nextEnemy.SetActive(false);
     }
 
     public void TakeDamage(int damage)
@@ -33,6 +44,11 @@ public class EyeController : MonoBehaviour
 
     void Die()
     {
+        if (nextEnemy != null)
+            nextEnemy.SetActive(true);
+        if (isBoss && onBossDeath != null)
+            onBossDeath.Invoke();
+
         Destroy(gameObject);
 
         //added for gates

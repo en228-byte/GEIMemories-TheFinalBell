@@ -5,26 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
-    [SerializeField] private GameObject gameOverPanel;
+    public GameObject gameOverPanel;
 
-    private void Awake()
+    void Start()
     {
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
+
+        AudioListener.pause = false; // pause audio
         Time.timeScale = 1f;
-        if (gameOverPanel) gameOverPanel.SetActive(false);
     }
 
     public void ShowGameOver()
     {
-        if (gameOverPanel) gameOverPanel.SetActive(true);
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
         Time.timeScale = 0f;
+        AudioListener.pause = true; // unpause audio
     }
 
     public void Retry()
     {
+        AudioListener.pause = false;
         Time.timeScale = 1f;
-        SceneChanging sceneChanger = new SceneChanging();
-        sceneChanger.ChangeScene("minigame1");
-        SceneManager.UnloadSceneAsync("minigame1");
+
+        // reloads current scene
+        Scene current = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(current.buildIndex);
     }
 }
-
