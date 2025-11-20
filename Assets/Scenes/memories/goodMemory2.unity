@@ -974,15 +974,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.data[0]
-      value: 
+      value: '*cheers from class*'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.data[1]
-      value: '*cheers from class*'
+      value: '*cheers from Niko*'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.data[2]

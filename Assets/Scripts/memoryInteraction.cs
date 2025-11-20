@@ -57,8 +57,9 @@ public class memoryInteraction : MonoBehaviour
     {
         for (int i = 0; i < memories.Length; i++)
         {
-            if (collision.gameObject.name == memories[i].ToString())
+            if (collision.gameObject.ToString() == memories[i].ToString())
             {
+                Debug.Log("touching: " + collision.gameObject.name);
                 nextScene = collision.gameObject.name;
                 if (Input.GetKey(KeyCode.E))
                 {
@@ -74,11 +75,14 @@ public class memoryInteraction : MonoBehaviour
     {
         for (int i = 0; i < memories.Length; i++)
         {
-            Debug.Log(memories[i]);
             try
             {
                 memories[i].GetComponent<SpriteRenderer>().enabled = true;
-                if (newBackground == "h")
+                if (newBackground == "lr")
+                {
+                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (newBackground == "td")
                 {
                     memories[i].GetComponent<SpriteRenderer>().enabled = false;
                 }

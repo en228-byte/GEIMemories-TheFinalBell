@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        if(playerController != null)
+        timer = 10;
+        if (playerController != null)
         {
             playerController.PlayerDied += WhenPlayerDies;
         }
@@ -45,13 +46,13 @@ public class GameController : MonoBehaviour
     //added for gate mechanics
     private void Update()
     {
-        Debug.Log("You win");
         timer -= Time.deltaTime;
         if (timer <= 0 && !GameOverCanvas.gameObject.activeSelf)
         {
+            Debug.Log("You win");
             SceneChanging sceneChanger = new SceneChanging();
             sceneChanger.ChangeScene("gamePlay");
-            navigation.gate2 = "h";
+            navigation.gate2 = "lr";
             navigation.canMove = true;
         }
     }

@@ -5,16 +5,16 @@ using UnityEngine;
 public class navigation : MonoBehaviour
 {
 
-    protected string[,] schoolMap = { {"o", "o", "cl", "o", "o", "o"},
-                                      {"o", "o", "h",  "h", "h", "lo"},
-                                      {"o", "o", "o",  "o", "o", "h" },
-                                      {"h", "lo", "h", "lo", "h", "g"},
-                                      {"h", "l", "o",  "ca", "o", "o"},
-                                      {"h", "o", "o",  "o",  "o", "o"},
-                                      {"h", "h", "h",  "h", "h", "lo"},
-                                      {"o", "o", "o", "o", "lo", "h" },
-                                      {"o", "o", "o",  "o", "h", "p"},
-                                      {"o", "o", "o",  "o", "e", "o"} };
+    protected string[,] schoolMap = { {"o", "o", "cl",  "o",  "o",  "o"},
+                                      {"o", "o", "lr",  "lr", "lr", "lo"},
+                                      {"o", "o", "o",   "o",  "o",  "td" },
+                                      {"td","lo","lr",  "lo", "lr", "g"},
+                                      {"td","l", "o",   "ca", "o",  "o"},
+                                      {"td","o", "o",   "o",  "o",  "o"},
+                                      {"lr","lr","lr",  "lr", "lo", "o"},
+                                      {"o", "o", "o",   "o",  "up",  "o" },
+                                      {"o", "o", "o",   "o",  "lr",  "p"},
+                                      {"o", "o", "o",   "o",  "o",  "o"} };
     int curRow;
     int curCol;
     public static string gate1;
@@ -29,6 +29,7 @@ public class navigation : MonoBehaviour
     public GameObject curBackground;
 
     public GameObject hallway;
+    public GameObject tdHallway;
     public GameObject classroom;
     public GameObject gym;
     public GameObject cafeteria;
@@ -87,6 +88,8 @@ public class navigation : MonoBehaviour
                     //going right
                     if (schoolMap[curRow, curCol + 1] != "o" && schoolMap[curRow, curCol + 1] != "lo")
                     {
+                        //switching player to appropriate place in new area
+                        playerChar.transform.position = new Vector3(-16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
                         //change location to the next one
                         curCol += 1;
                         changeBackground(schoolMap[curRow, curCol]);
@@ -95,8 +98,7 @@ public class navigation : MonoBehaviour
                         curBackground.tag = "hide";
 
 
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(-16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
+                        
                     }
                     else if (schoolMap[curRow, curCol + 1] == "lo")
                     {
@@ -120,9 +122,6 @@ public class navigation : MonoBehaviour
             {
                 if (schoolMap[curRow, curCol +1] == "lo")
                 {
-                    //schoolMap[curRow, curCol + 1] = "h";
-                    //Debug.Log("unlocked");
-
                     int index = 1;
                     foreach (string gate in gates)
                     {
@@ -148,6 +147,8 @@ public class navigation : MonoBehaviour
                 {
                     if (schoolMap[curRow, curCol - 1] != "o" && schoolMap[curRow, curCol - 1] != "lo")
                     {
+                        //switching player to appropriate place in new area
+                        playerChar.transform.position = new Vector3(16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
                         //change location to the next one
                         curCol -= 1;
                         changeBackground(schoolMap[curRow, curCol]);
@@ -156,8 +157,7 @@ public class navigation : MonoBehaviour
                         curBackground.tag = "hide";
 
 
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
+                        
 
                     }
                     else if (schoolMap[curRow, curCol - 1] == "lo")
@@ -181,10 +181,6 @@ public class navigation : MonoBehaviour
             {
                 if (schoolMap[curRow, curCol - 1] == "lo")
                 {
-                    //schoolMap[curRow, curCol + 1] = "h";
-                    //Debug.Log("unlocked");
-
-
                     int index = 1;
                     foreach (string gate in gates)
                     {
@@ -209,6 +205,8 @@ public class navigation : MonoBehaviour
                 {
                     if (schoolMap[curRow - 1, curCol] != "o" && schoolMap[curRow - 1, curCol] != "lo")
                     {
+                        //switching player to appropriate place in new area
+                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -8.5f, playerChar.transform.position.z);
                         //change location to the next one
                         curRow -= 1;
                         changeBackground(schoolMap[curRow, curCol]);
@@ -217,8 +215,7 @@ public class navigation : MonoBehaviour
                         curBackground.tag = "hide";
 
 
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -8.5f, playerChar.transform.position.z);
+                        
 
                     }
                     else if (schoolMap[curRow - 1, curCol] == "lo")
@@ -242,10 +239,6 @@ public class navigation : MonoBehaviour
             {
                 if (schoolMap[curRow - 1, curCol] == "lo")
                 {
-                    //schoolMap[curRow, curCol + 1] = "h";
-                    //Debug.Log("unlocked");
-
-                    Debug.Log("test0");
 
                     int index = 1;
                     foreach (string gate in gates)
@@ -272,6 +265,8 @@ public class navigation : MonoBehaviour
                 {
                     if (schoolMap[curRow + 1, curCol] != "o" && schoolMap[curRow + 1, curCol] != "lo")
                     {
+                        //switching player to appropriate place in new area
+                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, 6f, playerChar.transform.position.z);
                         //change location to the next one
                         curRow += 1;
                         changeBackground(schoolMap[curRow, curCol]);
@@ -280,8 +275,7 @@ public class navigation : MonoBehaviour
                         curBackground.tag = "hide";
 
 
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, 6f, playerChar.transform.position.z);
+                        
 
                     }
                     else if (schoolMap[curRow + 1, curCol] == "lo")
@@ -306,21 +300,14 @@ public class navigation : MonoBehaviour
             {
                 if (schoolMap[curRow + 1, curCol] == "lo")
                 {
-                    //schoolMap[curRow, curCol + 1] = "h";
-                    //Debug.Log("unlocked");
-
-                    Debug.Log("test0");
-
                     int index = 1;
                     foreach (string gate in gates)
                     {
                         if (gate == "lo" && canMove)
                         {
-                            Debug.Log("test1");
                             SceneChanging sceneChanger = new SceneChanging();
                             sceneChanger.ChangeScene("minigame" + index);
                             canMove = false;
-                            Debug.Log("test2");
                         }
                         index++;
                     }
@@ -331,10 +318,16 @@ public class navigation : MonoBehaviour
     void changeBackground(string newBackground)
     {
         Destroy(curBackground);
-        if (newBackground == "h")
+        if (newBackground == "lr")
         {
             curBackground = Instantiate(hallway);
             playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        }
+        if (newBackground == "td")
+        {
+            curBackground = Instantiate(tdHallway);
+            playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            playerChar.transform.position = new Vector3(0f, 0f, 0f);
         }
         if (newBackground == "cl")
         {

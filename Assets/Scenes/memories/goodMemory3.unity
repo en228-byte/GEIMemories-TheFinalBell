@@ -519,23 +519,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[1]
       value: 'Ray: Hey...I traded for your favorite snack since you got here late.'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[2]
+      propertyPath: lines.Array.data[1]
       value: 'Niko: Oh, thanks! I really thought I was gonna have to cope.'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[3]
+      propertyPath: lines.Array.data[2]
       value: 'Ray: Nope! I''ve got you covered. Anyways, I have to go, see ya!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: 'Niko: Yeah, see you!'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.data[4]

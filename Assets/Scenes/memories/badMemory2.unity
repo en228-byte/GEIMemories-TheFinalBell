@@ -420,44 +420,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.size
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[1]
       value: 'Kai: Oi, Bigshot!'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[2]
+      propertyPath: lines.Array.data[1]
       value: 'Ray: Huh?'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[3]
+      propertyPath: lines.Array.data[2]
       value: 'Kai: Yeah, you. We''re heading out after school, you coming with?'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[4]
+      propertyPath: lines.Array.data[3]
       value: 'Ray: Yeah, totally!'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[5]
+      propertyPath: lines.Array.data[4]
       value: 'Niko: But our pla-'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[6]
+      propertyPath: lines.Array.data[5]
       value: 'Ray: It''s fine'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[7]
+      propertyPath: lines.Array.data[6]
       value: 'Niko Muttering: It isn''t fine...'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
-      propertyPath: lines.Array.data[8]
+      propertyPath: lines.Array.data[7]
       value: 'Ray: Look, I have to make the most of this invitaion, he''s literally
         the most popular guy in school.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
+      propertyPath: lines.Array.data[8]
+      value: 'Niko: Whatever...'
       objectReference: {fileID: 0}
     - target: {fileID: 5157290041129187975, guid: 259db05b7141d8a4d8b78d8b7f642d7a, type: 3}
       propertyPath: lines.Array.data[9]
