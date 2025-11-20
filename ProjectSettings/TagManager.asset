@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Obstacle
   - BGM
+  - ignore
+  - hide
   layers:
   - Default
   - TransparentFX
