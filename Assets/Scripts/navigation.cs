@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class navigation : MonoBehaviour
@@ -8,11 +9,11 @@ public class navigation : MonoBehaviour
     protected string[,] schoolMap = { {"o", "o", "cl",  "o",  "o",  "o"},
                                       {"o", "o", "lr",  "lr", "lr", "lo"},
                                       {"o", "o", "o",   "o",  "o",  "td" },
-                                      {"td","lo","lr",  "lo", "lr", "g"},
+                                      {"lo","lr","lr",  "lo", "lr", "g"},
                                       {"td","l", "o",   "ca", "o",  "o"},
                                       {"td","o", "o",   "o",  "o",  "o"},
                                       {"lr","lr","lr",  "lr", "lo", "o"},
-                                      {"o", "o", "o",   "o",  "up",  "o" },
+                                      {"o", "o", "o",   "o",  "td",  "o" },
                                       {"o", "o", "o",   "o",  "lr",  "p"},
                                       {"o", "o", "o",   "o",  "o",  "o"} };
     int curRow;
@@ -36,6 +37,10 @@ public class navigation : MonoBehaviour
     public GameObject library;
     public GameObject office;
 
+    //debugging
+    public TMP_Text debugPos;
+    public float timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +63,9 @@ public class navigation : MonoBehaviour
         gates[1] = gate2;
         gates[2] = gate3;
         gates[3] = gate4;
+
+        //for debugging
+        timer = 0;
     }
 
     // Update is called once per frame
@@ -66,13 +74,18 @@ public class navigation : MonoBehaviour
         schoolMap[1, 5] = gate1;
         schoolMap[3,3] = gate2;
         schoolMap[3, 1] = gate3;
-        schoolMap[6,5] = gate4;
+        schoolMap[6,4] = gate4;
         gates[0] = gate1;
         gates[1] = gate2;
         gates[2] = gate3;
         gates[3] = gate4;
 
         memoryInteraction.hideOutside(curBackground.name);
+
+        //debugging pos
+        Collider2D cur = playerChar.GetComponent<Collider2D>();
+        timer += Time.deltaTime;
+        debugPos.text = timer.ToString();
 
         //checks where player is, to make sure they are someone where it makes sense they can change areas
         //going right

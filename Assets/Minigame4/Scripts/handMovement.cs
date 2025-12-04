@@ -128,7 +128,7 @@ public class NewBehaviourScript : MonoBehaviour
                         //load gameplay scene
                         SceneChanging sceneChanger = new SceneChanging();
                         sceneChanger.ChangeScene("gamePlay");
-                        navigation.gate4 = "h";
+                        navigation.gate4 = "td";
                         navigation.canMove = true;
                     }
                 }
