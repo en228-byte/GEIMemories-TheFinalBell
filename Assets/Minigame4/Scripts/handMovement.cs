@@ -7,12 +7,12 @@ using TMPro;
 public class NewBehaviourScript : MonoBehaviour
 {
     bool[] sides = new bool[5];
-    int[] numHits = { 3, 5, 5, 7, 7 };
     float[] speeds = { 5f, 5f, 3f, 3f, 2f };
     bool playerSide;
     bool curSide;
     bool notAlreadyHeld = true;
     bool inputLocked = false;
+    bool timerCount = false;
 
     public int level = 1;
     int index =0;
@@ -20,19 +20,35 @@ public class NewBehaviourScript : MonoBehaviour
     public TMP_Text timerDisplay;
     public TMP_Text levelDisplay;
 
-    DateTime startTime;
-    DateTime endTime;
     float timeDown;
     float timeLeft;
 
     public GameObject leftHand;
     public GameObject rightHand;
+    public GameObject instructions;
+    public GameObject retryButton;
+    public GameObject mirror1;
+    public GameObject mirror2;
+    public GameObject mirror3;
+    public GameObject mirror4;
+    public GameObject mirror5;
+
+    AudioSource soundEffects;
+    public AudioClip lastShatter;
+    public AudioClip levelBeatShatter;
+    public AudioClip mirrorCrack;
 
     // Start is called before the first frame update
     void Start()
     {
-        startLevel();
-
+        instructions.SetActive(true);
+        retryButton.SetActive(false);
+        soundEffects = GetComponent<AudioSource>();
+        mirror1.SetActive(false);
+        mirror2.SetActive(false);
+        mirror3.SetActive(false);
+        mirror4.SetActive(false);
+        mirror5.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,20 +61,16 @@ public class NewBehaviourScript : MonoBehaviour
             timeDown = 0;
         }
 
-       if (inputLocked)
-        {
-            return;
-        }
-
         if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
         {
             inputLocked = true;
-            return;
         }
 
-        timeLeft -= Time.deltaTime;
-        timerDisplay.text = timeLeft.ToString();
-        //Debug.Log(timeLeft);
+        if (timerCount)
+        {
+            timeLeft -= Time.deltaTime;
+            timerDisplay.text = timeLeft.ToString("f2");
+        }
 
         curSide = sides[index];
 
@@ -95,25 +107,26 @@ public class NewBehaviourScript : MonoBehaviour
         if ((Input.GetMouseButton(0) && !curSide) || (Input.GetMouseButton(1) && curSide))
         {
             inputLocked = true;
-            return;
         }
 
         if (timeLeft > 0.0f && notAlreadyHeld)
         {
-            if (playerSide == curSide && timeDown > 1)
+            if (playerSide == curSide && timeDown >= 1)
             {
                 notAlreadyHeld = false;
                 if (index + 1 < sides.Length)
                 {
+                    soundEffects.clip = mirrorCrack;
+                    soundEffects.Play();
                     index += 1;
                     timeDown = 0;
-                    leftHand.GetComponent <SpriteRenderer>().color = Color.yellow;
-                    rightHand.GetComponent<SpriteRenderer>().color = Color.yellow;
                 }
                 else
                 {
                     if (level + 1 < 6)
                     {
+                        soundEffects.clip = levelBeatShatter;
+                        soundEffects.Play();
                         level += 1;
                         index = 0;
                         Debug.Log("level" + level);
@@ -121,35 +134,54 @@ public class NewBehaviourScript : MonoBehaviour
                     }
                     else
                     {
-                        timerDisplay.text = "You win, gate unlocked";
-                        Debug.Log("You win");
+                        soundEffects.clip = lastShatter;
+                        soundEffects.Play();
+                        mirror5.SetActive(true);
+                        timerCount = false;
+                        timerDisplay.text = "you beat your reflection but you must still reflect";
                         leftHand.SetActive(false);
                         rightHand.SetActive(false);
-                        //load gameplay scene
-                        SceneChanging sceneChanger = new SceneChanging();
-                        sceneChanger.ChangeScene("gamePlay");
                         navigation.gate4 = "td";
                         navigation.canMove = true;
                     }
                 }
+            }
+
+            if (level > 1)
+            {
+                mirror1.SetActive(true);
+            }
+            if (level > 2)
+            {
+                mirror2.SetActive(true);
+            }
+            if (level > 3)
+            {
+                mirror3.SetActive(true);
+            }
+            if (level > 4)
+            {
+                mirror4.SetActive(true);
             }
         }
 
         //end if timer runs out
         if (timeLeft < 0)
         {
+            timerCount = false;
             timerDisplay.text = "You lose. Death awaits";
-            SceneChanging sceneChanger = new SceneChanging();
-            sceneChanger.ChangeScene("minigame4");
+            retryButton.SetActive(true);
             leftHand.SetActive(false);
             rightHand.SetActive(false);
         }
 
     }
 
-    void startLevel()
+    public void startLevel()
     {
-        levelDisplay.text = level.ToString();
+        levelDisplay.text = "Level: " + level.ToString();
+        timerCount = true;
+        instructions.SetActive(false);
 
         //after starting level by clicking NPC fill in sides[] with what the player will have to click
         for (int i = 0; i < 5; i++)
@@ -172,5 +204,11 @@ public class NewBehaviourScript : MonoBehaviour
 
         leftHand.GetComponent<SpriteRenderer>().color = Color.gray;
         rightHand.GetComponent<SpriteRenderer>().color = Color.gray;
+    }
+
+    public void exitMinigame()
+    {
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("gamePlay");
     }
 }
