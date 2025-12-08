@@ -22,7 +22,6 @@ public class SceneChanging : MonoBehaviour
                 if (temp.name == cur)
                 {
                     SceneManager.SetActiveScene(temp);
-                    Debug.Log(SceneManager.GetActiveScene().name);
                 }
             }
         }

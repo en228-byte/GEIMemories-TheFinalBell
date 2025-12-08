@@ -25,8 +25,18 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        if (winPanel) winPanel.SetActive(true);
-        Freeze();
+        if (winPanel)
+        {
+            winPanel.SetActive(true);
+            //added for gates
+            SceneChanging sceneChanger = new SceneChanging();
+            sceneChanger.ChangeScene("gamePlay");
+            navigation.gate3 = "td";
+            navigation.canMove = true;
+            MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
+            MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
+        }
+        //Freeze();
     }
 
     public void Lose()
@@ -51,8 +61,11 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("minigame3");
+        SceneManager.UnloadSceneAsync("minigame3");
         Unfreeze();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
     public void LoadScene(string name)

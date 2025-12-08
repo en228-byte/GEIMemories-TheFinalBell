@@ -50,11 +50,5 @@ public class EyeController : MonoBehaviour
             onBossDeath.Invoke();
 
         Destroy(gameObject);
-
-        //added for gates
-        SceneChanging sceneChanger = new SceneChanging();
-        sceneChanger.ChangeScene("gamePlay");
-        navigation.gate1 = "td";
-        navigation.canMove = true;
     }
 }

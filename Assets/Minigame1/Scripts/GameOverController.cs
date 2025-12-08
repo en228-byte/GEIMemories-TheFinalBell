@@ -31,7 +31,8 @@ public class GameOverController : MonoBehaviour
         Time.timeScale = 1f;
 
         // reloads current scene
-        Scene current = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(current.buildIndex);
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("minigame1");
+        SceneManager.UnloadSceneAsync("minigame1");
     }
 }

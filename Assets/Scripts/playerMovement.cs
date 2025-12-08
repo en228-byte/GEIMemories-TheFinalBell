@@ -23,6 +23,7 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
         void Update()
         {
+         rb.angularVelocity = 0.0f;
 
 
             //move forward (left to right)

@@ -18,7 +18,14 @@ public class WinController : MonoBehaviour
         if (winPanel != null)
             winPanel.SetActive(true);
 
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+        //added for gates
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("gamePlay");
+        navigation.gate1 = "td";
+        navigation.canMove = true;
+        MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
+        MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
     }
 
     public void Retry()
