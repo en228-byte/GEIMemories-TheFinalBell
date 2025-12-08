@@ -59,13 +59,13 @@ public class memoryInteraction : MonoBehaviour
         {
             if (collision.gameObject.ToString() == memories[i].ToString())
             {
-                Debug.Log("touching: " + collision.gameObject.name);
                 nextScene = collision.gameObject.name;
                 if (Input.GetKey(KeyCode.E))
                 {
                     SceneChanging sceneChanger = new SceneChanging();
                     sceneChanger.ChangeScene(nextScene);
-                    Destroy(collision.gameObject);
+                    collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    collision.gameObject.GetComponent<Collider2D>().enabled = false;
                 }
             }
         }
@@ -77,14 +77,14 @@ public class memoryInteraction : MonoBehaviour
         {
             try
             {
-                memories[i].GetComponent<SpriteRenderer>().enabled = true;
+                memories[i].SetActive(true);
                 if (newBackground == "lr")
                 {
-                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                    memories[i].SetActive(false);
                 }
                 if (newBackground == "td")
                 {
-                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                    memories[i].SetActive(false);
                 }
                 if (newBackground == "cl")
                 {
@@ -96,7 +96,7 @@ public class memoryInteraction : MonoBehaviour
                     {
                         continue;
                     }
-                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                    memories[i].SetActive(false);
                 }
                 if (newBackground == "ca")
                 {
@@ -108,7 +108,7 @@ public class memoryInteraction : MonoBehaviour
                     {
                         continue;
                     }
-                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                    memories[i].SetActive(false);
                 }
                 if (newBackground == "p")
                 {
@@ -120,7 +120,7 @@ public class memoryInteraction : MonoBehaviour
                     {
                         continue;
                     }
-                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                    memories[i].SetActive(false);
                 }
                 if (newBackground == "l")
                 {
@@ -132,7 +132,7 @@ public class memoryInteraction : MonoBehaviour
                     {
                         continue;
                     }
-                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                    memories[i].SetActive(false);
                 }
                 if (newBackground == "g")
                 {
@@ -144,7 +144,7 @@ public class memoryInteraction : MonoBehaviour
                     {
                         continue;
                     }
-                    memories[i].GetComponent<SpriteRenderer>().enabled = false;
+                    memories[i].SetActive(false);
                 }
             }
             catch (MissingReferenceException)

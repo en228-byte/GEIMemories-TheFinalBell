@@ -5,23 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class hidePlay : MonoBehaviour
 {
-    //object[] items;
-    //object[] makeInvisible;
-    // Start is called before the first frame update
     void Start()
     {
-        /*
-        items = GameObject.FindObjectsOfType(typeof(GameObject));
-        foreach (object item in items)
-        {
-            GameObject current = (GameObject)item;
-            //makes them invisible if not camera
-            if (!current.CompareTag("MainCamera") && !current.CompareTag("ignore"))
-            {
-                current.tag = "hide";
-            }
-        }
-        */
+       
     }
 
     // Update is called once per frame
@@ -32,53 +18,52 @@ public class hidePlay : MonoBehaviour
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             var temp = SceneManager.GetSceneAt(i);
+            Debug.Log("Loaded scene: " + temp.name);
             //if any memory or minigame is active
             if (temp.name.Contains("Memory") || temp.name.Contains("Minigame"))
             {
                 //cycle through all objects in gamePlay scene
-                foreach (object item in GameObject.FindGameObjectsWithTag("hide"))
+                foreach (GameObject item in GameObject.FindGameObjectsWithTag("hide"))
                 {
-                    GameObject current = (GameObject)item;
-                    //makes them invisible if not camera
-                    try
+                    if (item == null)
                     {
-                        current.GetComponent<SpriteRenderer>().enabled = false;
-                        try
-                        {
-                            current.GetComponent<Collider2D>().enabled = false;
-                        }
-                        catch
-                        {
-                            break;
-                        }
+                        continue;
                     }
-                    catch
+                    if (item.TryGetComponent<SpriteRenderer>(out var sr))
                     {
-                        break;
+                        sr.enabled = false;
                     }
-                    
+                    if (item.TryGetComponent<Collider2D>(out var col))
+                    {
+                        col.enabled = false;
+                    }
+                    if (item.TryGetComponent<UnityEngine.UI.Graphic>(out var ui))
+                    {
+                        ui.enabled = false;
+                    }
                 }
             } else
             {
                 foreach (GameObject item in GameObject.FindGameObjectsWithTag("hide"))
                 {
-                    //makes them visible
-                    GameObject current = item;
-                    try
+                    if (item == null)
                     {
-                        current.GetComponent<SpriteRenderer>().enabled = true;
-                        try
-                        {
-                            current.GetComponent<Collider2D>().enabled = true;
-                        }
-                        catch
-                        {
-                            break;
-                        }
+                        continue;
                     }
-                    catch
+
+                    if (item.TryGetComponent<SpriteRenderer>(out var sr))
                     {
-                        break;
+                        sr.enabled = true;
+                    }
+
+                    if (item.TryGetComponent<Collider2D>(out var col))
+                    {
+                        col.enabled = true;
+                    }
+
+                    if (item.TryGetComponent<UnityEngine.UI.Graphic>(out var ui))
+                    {
+                        ui.enabled = true;
                     }
                 }
             }

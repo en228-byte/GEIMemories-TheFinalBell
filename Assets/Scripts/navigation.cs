@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class navigation : MonoBehaviour
@@ -8,15 +9,16 @@ public class navigation : MonoBehaviour
     protected string[,] schoolMap = { {"o", "o", "cl",  "o",  "o",  "o"},
                                       {"o", "o", "lr",  "lr", "lr", "lo"},
                                       {"o", "o", "o",   "o",  "o",  "td" },
-                                      {"td","lo","lr",  "lo", "lr", "g"},
+                                      {"lo","lr","lr",  "lo", "lr", "g"},
                                       {"td","l", "o",   "ca", "o",  "o"},
                                       {"td","o", "o",   "o",  "o",  "o"},
                                       {"lr","lr","lr",  "lr", "lo", "o"},
-                                      {"o", "o", "o",   "o",  "up",  "o" },
+                                      {"o", "o", "o",   "o",  "td",  "o" },
                                       {"o", "o", "o",   "o",  "lr",  "p"},
                                       {"o", "o", "o",   "o",  "o",  "o"} };
     int curRow;
     int curCol;
+    int nextGateIndex =-1;
     public static string gate1;
     public static string gate2;
     public static string gate3;
@@ -24,10 +26,12 @@ public class navigation : MonoBehaviour
     public static string exitGate;
     string[] gates;
     public static bool canMove = true;
+    float timer = 0;
+    bool isTimer = false;
 
+    public TMP_Text thoughtBubble;
     public GameObject playerChar;
     public GameObject curBackground;
-
     public GameObject hallway;
     public GameObject tdHallway;
     public GameObject classroom;
@@ -66,254 +70,103 @@ public class navigation : MonoBehaviour
         schoolMap[1, 5] = gate1;
         schoolMap[3,3] = gate2;
         schoolMap[3, 1] = gate3;
-        schoolMap[6,5] = gate4;
+        schoolMap[6,4] = gate4;
         gates[0] = gate1;
         gates[1] = gate2;
         gates[2] = gate3;
         gates[3] = gate4;
 
         memoryInteraction.hideOutside(curBackground.name);
-
-        //checks where player is, to make sure they are someone where it makes sense they can change areas
-        //going right
-        if (playerChar.transform.position.x >= 17)
+        if (isTimer)
         {
-            //activate move command with E key
-            if (Input.GetKeyUp(KeyCode.E))
+            timer += Time.deltaTime;
+        }
+        if (timer >= 1.5)
+        {
+            thoughtBubble.text = "";
+            timer = 0;
+            isTimer = false;
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            //going right
+            if (playerChar.transform.position.x >= 17)
             {
-                //check if space is valid area
-
-                try
-                {
-                    //going right
-                    if (schoolMap[curRow, curCol + 1] != "o" && schoolMap[curRow, curCol + 1] != "lo")
-                    {
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(-16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
-                        //change location to the next one
-                        curCol += 1;
-                        changeBackground(schoolMap[curRow, curCol]);
-                        curBackground.name = schoolMap[curRow, curCol];
-                        Debug.Log(schoolMap[curRow, curCol]);
-                        curBackground.tag = "hide";
-
-
-                        
-                    }
-                    else if (schoolMap[curRow, curCol + 1] == "lo")
-                    {
-                        Debug.Log("Press space to unlock");
-
-                    }
-                    else
-                    {
-                        Debug.Log("There's nothing there...");
-                    }
-                }
-                catch (System.IndexOutOfRangeException)
-                {
-
-                    Debug.Log("There's nothing there...");
-                }
-
-               
+                if (switchRooms(curRow, curCol + 1))
+                    playerChar.transform.position = new Vector3(0f, playerChar.transform.position.y, 0);
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            //going left
+            if (playerChar.transform.position.x <= -17)
             {
-                if (schoolMap[curRow, curCol +1] == "lo")
-                {
-                    int index = 1;
-                    foreach (string gate in gates)
-                    {
-                        if (gate == "lo" && canMove)
-                        {
-                            Debug.Log("test1");
-                            SceneChanging sceneChanger = new SceneChanging();
-                            sceneChanger.ChangeScene("minigame"+index);
-                            canMove = false;
-                            Debug.Log("test2");
-                        }
-                        index++;
-                    }
-                }
+                if (switchRooms(curRow, curCol - 1))
+                    playerChar.transform.position = new Vector3(0f, playerChar.transform.position.y, 0);
+            }
+            //going up
+            if (playerChar.transform.position.y >= 6)
+            {
+                if(switchRooms(curRow - 1, curCol))
+                    playerChar.transform.position = new Vector3(playerChar.transform.position.x, 0f, 0);
+            }
+            //going down
+            if (playerChar.transform.position.y <= -9)
+            {
+                if(switchRooms(curRow + 1, curCol))
+                    playerChar.transform.position = new Vector3(playerChar.transform.position.x, 0f, 0);
             }
         }
-        //going left
-        if (playerChar.transform.position.x <= -17)
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (nextGateIndex != -1)
             {
-                try
-                {
-                    if (schoolMap[curRow, curCol - 1] != "o" && schoolMap[curRow, curCol - 1] != "lo")
-                    {
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(16.5f, playerChar.transform.position.y, playerChar.transform.position.z);
-                        //change location to the next one
-                        curCol -= 1;
-                        changeBackground(schoolMap[curRow, curCol]);
-                        curBackground.name = schoolMap[curRow, curCol];
-                        Debug.Log(schoolMap[curRow, curCol]);
-                        curBackground.tag = "hide";
-
-
-                        
-
-                    }
-                    else if (schoolMap[curRow, curCol - 1] == "lo")
-                    {
-                        Debug.Log("Press space to unlock");
-
-                    }
-                    else
-                    {
-                        Debug.Log("There's nothing there...");
-                    }
-                }
-                catch (System.Exception)
-                {
-
-                    Debug.Log("There's nothing there...");
-                }
-                
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (schoolMap[curRow, curCol - 1] == "lo")
-                {
-                    int index = 1;
-                    foreach (string gate in gates)
-                    {
-                        Debug.Log(gate1 +  " " + gate);
-                        if (gate == "lo" && canMove)
-                        {
-                            SceneChanging sceneChanger = new SceneChanging();
-                            sceneChanger.ChangeScene("minigame" + index);
-                            canMove = false;
-                        }
-                        index++;
-                    }
-                }
+                SceneChanging sceneChanger = new SceneChanging();
+                sceneChanger.ChangeScene("minigame" + (nextGateIndex + 1));
+                nextGateIndex = -1;
             }
         }
-        //going up
-        if (playerChar.transform.position.y >= 6)
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(playerChar.transform.position + new Vector3(0.0f, 2f, 0f));
+            thoughtBubble.GetComponent<RectTransform>().position = screenPos;
+    }
+
+    bool switchRooms(int row, int col)
+    {
+        try
         {
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                try
+            string next = schoolMap[row, col];
+            switch (next)
                 {
-                    if (schoolMap[curRow - 1, curCol] != "o" && schoolMap[curRow - 1, curCol] != "lo")
-                    {
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, -8.5f, playerChar.transform.position.z);
-                        //change location to the next one
-                        curRow -= 1;
-                        changeBackground(schoolMap[curRow, curCol]);
-                        curBackground.name = schoolMap[curRow, curCol];
-                        Debug.Log(schoolMap[curRow, curCol]);
-                        curBackground.tag = "hide";
-
-
-                        
-
-                    }
-                    else if (schoolMap[curRow - 1, curCol] == "lo")
-                    {
-                        Debug.Log("Press space to unlock");
-
-                    }
-                    else
-                    {
-                        Debug.Log("There's nothing there...");
-                    }
-                }
-                catch (System.Exception)
-                {
-
-                    Debug.Log("There's nothing there...");
-                }
-                
-            }
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                if (schoolMap[curRow - 1, curCol] == "lo")
-                {
-
-                    int index = 1;
-                    foreach (string gate in gates)
-                    {
-                        if (gate == "lo" && canMove)
+                    case "o":
+                        thoughtBubble.text = "There's nothing there...";
+                        isTimer = true;
+                    return false;
+                    case "lo":
+                        thoughtBubble.text = "There's a gate ahead...should I accept the challenge? Press [space] to accept.";
+                        isTimer = true;
+                    for (int i = 0; i < gates.Length; i++)
                         {
-                            Debug.Log("test1");
-                            SceneChanging sceneChanger = new SceneChanging();
-                            sceneChanger.ChangeScene("minigame" + index);
-                            canMove = false;
-                            Debug.Log("test2");
+                            if (gates[i] == "lo")
+                            {
+                                nextGateIndex = i;
+                                break;
+                            }
                         }
-                        index++;
-                    }
+                        return false;
+                    default:
+                        thoughtBubble.text = "Somewhere new";
+                        isTimer = true;
+                    changeBackground(next);
+                        curCol = col;
+                        curRow = row;
+                    return true;
                 }
-            }
         }
-        //going down
-        if (playerChar.transform.position.y <= -9)
+        catch (System.Exception)
         {
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                try
-                {
-                    if (schoolMap[curRow + 1, curCol] != "o" && schoolMap[curRow + 1, curCol] != "lo")
-                    {
-                        //switching player to appropriate place in new area
-                        playerChar.transform.position = new Vector3(playerChar.transform.position.x, 6f, playerChar.transform.position.z);
-                        //change location to the next one
-                        curRow += 1;
-                        changeBackground(schoolMap[curRow, curCol]);
-                        curBackground.name = schoolMap[curRow, curCol];
-                        Debug.Log(schoolMap[curRow, curCol]);
-                        curBackground.tag = "hide";
 
-
-                        
-
-                    }
-                    else if (schoolMap[curRow + 1, curCol] == "lo")
-                    {
-                        Debug.Log("Press space to unlock");
-
-                    }
-                    else
-                    {
-                        Debug.Log("There's nothing there...");
-
-                    }
-                }
-                catch (System.Exception)
-                {
-
-                    Debug.Log("There's nothing there...");
-                }
-                
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (schoolMap[curRow + 1, curCol] == "lo")
-                {
-                    int index = 1;
-                    foreach (string gate in gates)
-                    {
-                        if (gate == "lo" && canMove)
-                        {
-                            SceneChanging sceneChanger = new SceneChanging();
-                            sceneChanger.ChangeScene("minigame" + index);
-                            canMove = false;
-                        }
-                        index++;
-                    }
-                }
-            }
-        }        
+            thoughtBubble.text = "There's nothing there...";
+            isTimer = true;
+            return false;
+        }
     }
     void changeBackground(string newBackground)
     {
@@ -355,5 +208,7 @@ public class navigation : MonoBehaviour
             playerChar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
         curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
+        curBackground.name = newBackground;
+        curBackground.tag = "hide";
     }
 }
