@@ -24,6 +24,8 @@ public class WinController : MonoBehaviour
         sceneChanger.ChangeScene("gamePlay");
         navigation.gate1 = "td";
         navigation.canMove = true;
+        MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
+        MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
     }
 
     public void Retry()

@@ -22,7 +22,6 @@ public class SceneChanging : MonoBehaviour
                 if (temp.name == cur)
                 {
                     SceneManager.SetActiveScene(temp);
-                    Debug.Log(SceneManager.GetActiveScene().name);
                 }
             }
         }
@@ -35,7 +34,6 @@ public class SceneChanging : MonoBehaviour
         if (sceneName.Contains("Memory") || sceneName.Contains("minigame"))
         {
             lastScene = sceneName;
-            Debug.Log(sceneName);
             //load next scene
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {

@@ -143,6 +143,8 @@ public class NewBehaviourScript : MonoBehaviour
                         rightHand.SetActive(false);
                         navigation.gate4 = "td";
                         navigation.canMove = true;
+                        MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
+                        MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
                     }
                 }
             }

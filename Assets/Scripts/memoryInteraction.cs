@@ -66,6 +66,17 @@ public class memoryInteraction : MonoBehaviour
                     sceneChanger.ChangeScene(nextScene);
                     collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                     collision.gameObject.GetComponent<Collider2D>().enabled = false;
+
+
+                    MemoryTracker track = new MemoryTracker();
+                    if (collision.gameObject.ToString().Contains("good"))
+                    {
+                        track.FindMemory(true);
+                    } else if (collision.gameObject.ToString().Contains("bad"))
+                    {
+                        track.FindMemory(false);
+                    }
+                    
                 }
             }
         }
