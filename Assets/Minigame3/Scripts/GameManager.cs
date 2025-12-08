@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
             sceneChanger.ChangeScene("gamePlay");
             navigation.gate3 = "td";
             navigation.canMove = true;
+            MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
+            MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
         }
         //Freeze();
     }

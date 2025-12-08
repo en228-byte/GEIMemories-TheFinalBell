@@ -18,7 +18,6 @@ public class hidePlay : MonoBehaviour
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             var temp = SceneManager.GetSceneAt(i);
-            Debug.Log("Loaded scene: " + temp.name);
             //if any memory or minigame is active
             if (temp.name.Contains("Memory") || temp.name.Contains("Minigame"))
             {

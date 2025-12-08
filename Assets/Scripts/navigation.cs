@@ -88,43 +88,61 @@ public class navigation : MonoBehaviour
             isTimer = false;
         }
 
-        if (Input.GetKeyUp(KeyCode.E))
-        {
+        
             //going right
             if (playerChar.transform.position.x >= 17)
             {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
                 if (switchRooms(curRow, curCol + 1))
+                {
                     playerChar.transform.position = new Vector3(0f, playerChar.transform.position.y, 0);
+                }
+            }
+            startMinigame();
             }
             //going left
             if (playerChar.transform.position.x <= -17)
             {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
                 if (switchRooms(curRow, curCol - 1))
+                {
                     playerChar.transform.position = new Vector3(0f, playerChar.transform.position.y, 0);
+                }
+            }
+            startMinigame();
             }
             //going up
             if (playerChar.transform.position.y >= 6)
             {
-                if(switchRooms(curRow - 1, curCol))
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                if (switchRooms(curRow - 1, curCol))
+                {
                     playerChar.transform.position = new Vector3(playerChar.transform.position.x, 0f, 0);
+                }
+            }
+            startMinigame();
             }
             //going down
             if (playerChar.transform.position.y <= -9)
             {
-                if(switchRooms(curRow + 1, curCol))
-                    playerChar.transform.position = new Vector3(playerChar.transform.position.x, 0f, 0);
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            if (nextGateIndex != -1)
+            if (Input.GetKeyUp(KeyCode.E))
             {
-                SceneChanging sceneChanger = new SceneChanging();
-                sceneChanger.ChangeScene("minigame" + (nextGateIndex + 1));
-                nextGateIndex = -1;
+                if (switchRooms(curRow + 1, curCol))
+                {
+                    playerChar.transform.position = new Vector3(playerChar.transform.position.x, 0f, 0);
+                }
             }
+            startMinigame();
+            }
+        
+        if (playerChar.transform.position.x >= 17 || playerChar.transform.position.y >= 6  || playerChar.transform.position.x <= -17 || playerChar.transform.position.y <= -9)
+        {
+            startMinigame();
         }
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(playerChar.transform.position + new Vector3(0.0f, 2f, 0f));
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(playerChar.transform.position + new Vector3(0.0f, 2f, 0f));
             thoughtBubble.GetComponent<RectTransform>().position = screenPos;
     }
 
@@ -147,6 +165,7 @@ public class navigation : MonoBehaviour
                             if (gates[i] == "lo")
                             {
                                 nextGateIndex = i;
+                                Debug.Log(nextGateIndex);
                                 break;
                             }
                         }
@@ -210,5 +229,29 @@ public class navigation : MonoBehaviour
         curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
         curBackground.name = newBackground;
         curBackground.tag = "hide";
+    }
+    
+    void startMinigame()
+    {
+        int curSum = MemoryTracker.badMemoriesFound + MemoryTracker.goodMemoriesFound;
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (nextGateIndex != -1)
+            {
+                if (MemoryTracker.badMemoriesFound > MemoryTracker.lastBad || MemoryTracker.goodMemoriesFound > MemoryTracker.lastGood)
+                {
+                    SceneChanging sceneChanger = new SceneChanging();
+                    sceneChanger.ChangeScene("minigame" + (nextGateIndex + 1));
+                    nextGateIndex = -1;
+
+                }
+                else
+                {
+                    thoughtBubble.text = "I think I need to find something before I go.";
+                    isTimer = true;
+                }
+
+            }
+        }
     }
 }

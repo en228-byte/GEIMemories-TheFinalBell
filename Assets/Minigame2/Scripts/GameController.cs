@@ -54,6 +54,8 @@ public class GameController : MonoBehaviour
             sceneChanger.ChangeScene("gamePlay");
             navigation.gate2 = "lr";
             navigation.canMove = true;
+            MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
+            MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
         }
     }
 }
