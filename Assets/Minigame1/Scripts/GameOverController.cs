@@ -27,12 +27,8 @@ public class GameOverController : MonoBehaviour
 
     public void Retry()
     {
-        AudioListener.pause = false;
-        Time.timeScale = 1f;
-
-        // reloads current scene
-        SceneChanging sceneChanger = new SceneChanging();
-        sceneChanger.ChangeScene("minigame1");
-        SceneManager.UnloadSceneAsync("minigame1");
+    AudioListener.pause = false;
+    Time.timeScale = 1f;
+    SceneManager.LoadScene("minigame1");
     }
 }
