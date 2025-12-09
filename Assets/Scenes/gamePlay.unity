@@ -698,8 +698,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ambientSource: {fileID: 1076530855}
   bellSource: {fileID: 1599637662}
-  step: {fileID: 2108318271}
-  blackNoise: {fileID: 8300000, guid: ce555ed67b946d3498177bf7f80c3f41, type: 3}
+  stepSource: {fileID: 2108318271}
+  ambient1: {fileID: 8300000, guid: ce555ed67b946d3498177bf7f80c3f41, type: 3}
+  ambient2: {fileID: 8300000, guid: 679c7ef861d78e74da4fa304a4d50fc8, type: 3}
+  ambient3: {fileID: 8300000, guid: 5d285ef7d77a82c4ea549680b920130d, type: 3}
+  ambient4: {fileID: 8300000, guid: 0a3f0d10e0ed94e448398177afd9cd7d, type: 3}
+  ambient5: {fileID: 8300000, guid: baf7756ba23a25749bff629b15d1648f, type: 3}
+  step1: {fileID: 8300000, guid: 00c62f1a1ed791a48a2fe020151fd75a, type: 3}
+  step2: {fileID: 8300000, guid: 5d3e140f58f1ff24f8a9d902fbb83861, type: 3}
+  step3: {fileID: 8300000, guid: 7930722156bbae648b6068177c6a4223, type: 3}
+  step4: {fileID: 8300000, guid: ceb643f967e9db04dacb11a153cb80d4, type: 3}
+  step5: {fileID: 8300000, guid: fd8943fea1dff944c88d8c71317469d6, type: 3}
   bell: {fileID: 8300000, guid: 33e9cda0552337942a009d058f4ff8c7, type: 3}
 --- !u!114 &1522632370
 MonoBehaviour:

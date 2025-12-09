@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class DecayManager : MonoBehaviour
 {
-    [Range(0, 100)] public float decayLevel = 0f;
+    [Range(0, 100)] public static float decayLevel = 0f;
     public UnityEvent<float> onDecayChanged; 
 
     public void ModifyDecay(float amount)

@@ -1,15 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
 
-    public float deltaX = 120;
-    public float deltaY = 120;
-
-
+    private float speed = 3.5f;
+    private int decayDecrease = 0;
     private Rigidbody2D rb;
 
     public string nextScene;
@@ -21,112 +20,53 @@ public class playerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-        void Update()
-        {
-         rb.angularVelocity = 0.0f;
-
-
-            //move forward (left to right)
-            if (Input.GetKey(KeyCode.D))
-            {
-                rb.velocity = new Vector2(4.0f, 0.0f);
-                
-            }
-            else if (Input.GetKeyUp(KeyCode.D))
-            {
-                rb.velocity = new Vector2(0.0f, 0.0f);
-                
-            }
-            //move backwards (right to left)
-            if (Input.GetKey(KeyCode.A))
-            {
-                rb.velocity = new Vector2(-4.0f, 0.0f);
-                
-            }
-            else if (Input.GetKeyUp(KeyCode.A))
-            {
-                rb.velocity = new Vector2(0.0f, 0.0f);
-                
-            }
-            //move up (down to up)
-            if (Input.GetKey(KeyCode.W))
-            {
-                rb.velocity = new Vector2(0.0f, 4.0f);
-                
-            }
-            else if (Input.GetKeyUp(KeyCode.W))
-            {
-                rb.velocity = new Vector2(0.0f, 0.0f);
-                
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                rb.velocity = new Vector2(0.0f, -4.0f);
-               
-            }
-            else if (Input.GetKeyUp(KeyCode.S))
-            {
-                rb.velocity = new Vector2(0.0f, 0.0f);
-                
-            }
-
-        }
-    /*
-    private void OnTriggerStay2D(UnityEngine.Collider2D collision)
+    void Update()
     {
-        if (collision.gameObject.name == "goodMemory1")
+        rb.angularVelocity = 0.0f;
+        speed = speed - decayDecrease;
+
+        //move forward (left to right)
+        if (Input.GetKey(KeyCode.D))
         {
-            nextScene = "goodMemory1";
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                SceneChanging sceneChanger = new SceneChanging();
-                sceneChanger.ChangeScene(nextScene);
-                Destroy(collision.gameObject);
-            }
+            rb.velocity = new Vector2(speed, 0.0f);
 
         }
-        if (collision.gameObject.name == "goodMemory2")
+        else if (Input.GetKeyUp(KeyCode.D))
         {
-            nextScene = "goodMemory2";
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                SceneChanging sceneChanger = new SceneChanging();
-                sceneChanger.ChangeScene(nextScene);
-                Destroy(collision.gameObject);
-            }
+            rb.velocity = new Vector2(0.0f, 0.0f);
 
         }
-        if (collision.gameObject.name == "goodMemory3")
+        //move backwards (right to left)
+        if (Input.GetKey(KeyCode.A))
         {
-            nextScene = "goodMemory3";
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                SceneChanging sceneChanger = new SceneChanging();
-                sceneChanger.ChangeScene(nextScene);
-                Destroy(collision.gameObject);
-            }
+            rb.velocity = new Vector2(-speed, 0.0f);
+
         }
-        if (collision.gameObject.name == "badMemory1")
+        else if (Input.GetKeyUp(KeyCode.A))
         {
-            nextScene = "badMemory1";
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                SceneChanging sceneChanger = new SceneChanging();
-                sceneChanger.ChangeScene(nextScene);
-                Destroy(collision.gameObject);
-            }
+            rb.velocity = new Vector2(0.0f, 0.0f);
+
         }
-        if (collision.gameObject.name == "badMemory2")
+        //move up (down to up)
+        if (Input.GetKey(KeyCode.W))
         {
-            nextScene = "badMemory2";
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                SceneChanging sceneChanger = new SceneChanging();
-                sceneChanger.ChangeScene(nextScene);
-                Destroy(collision.gameObject);
-            }
+            rb.velocity = new Vector2(0.0f, speed);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.W))
+        {
+            rb.velocity = new Vector2(0.0f, 0.0f);
+
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.velocity = new Vector2(0.0f, -speed);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            rb.velocity = new Vector2(0.0f, 0.0f);
+
         }
     }
-    */
-
 }
