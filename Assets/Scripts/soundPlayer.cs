@@ -7,21 +7,31 @@ public class soundPlayer : MonoBehaviour
 {
     public AudioSource ambientSource;
     public AudioSource bellSource;
-    public AudioSource step;
-    public AudioClip blackNoise;
+    public AudioSource stepSource;
+
+    public AudioClip ambient1;
+    public AudioClip ambient2;
+    public AudioClip ambient3;
+    public AudioClip ambient4;
+    public AudioClip ambient5;
+
+    public AudioClip step1;
+    public AudioClip step2;
+    public AudioClip step3;
+    public AudioClip step4;
+    public AudioClip step5;
+
     public AudioClip bell;
 
 
 
     float bellTimer = 0;
-    int playNext;
 
     // Start is called before the first frame update
     void Start()
     {
-        //ambientSource = ambientSource.GetComponent<AudioSource>();
-        //bellSource = bellSource.GetComponent<AudioSource>();
-        playNext = Random.Range(1, 10);
+        ambientSource.clip = ambient1;
+        stepSource.clip = step1;
         ambientSource.Play();
     }
 
@@ -37,73 +47,107 @@ public class soundPlayer : MonoBehaviour
             bellTimer = 0;
         }
 
-        /*
-        if (ambientTimer >= playNext && !ambientSource.isPlaying)
-        {
-            float startAt = Random.Range(0, ambientSource.clip.length - 1);
-            ambientSource.volume = Random.Range(0.2f, 1.0f);
-            ambientSource.time = (int)startAt;
-            ambientSource.Play();
-            playNext = Random.Range(1, 40);
-            ambientTimer = 0;
-        }*/
         if (Input.GetKey(KeyCode.D))
         {
-            if (!step.isPlaying)
+            if (!stepSource.isPlaying)
             {
-                step.Play();
+                stepSource.Play();
             }
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
-            if (step.isPlaying)
+            if (stepSource.isPlaying)
             {
-                step.Stop();
+                stepSource.Stop();
             }
         }
         //move backwards (right to left)
         if (Input.GetKey(KeyCode.A))
         {
-            if (!step.isPlaying)
+            if (!stepSource.isPlaying)
             {
-                step.Play();
+                stepSource.Play();
             }
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
-            if (step.isPlaying)
+            if (stepSource.isPlaying)
             {
-                step.Stop();
+                stepSource.Stop();
             }
         }
         //move up (down to up)
         if (Input.GetKey(KeyCode.W))
         {
-            if (!step.isPlaying)
+            if (!stepSource.isPlaying)
             {
-                step.Play();
+                stepSource.Play();
             }
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
-            if (step.isPlaying)
+            if (stepSource.isPlaying)
             {
-                step.Stop();
+                stepSource.Stop();
             }
         }
         if (Input.GetKey(KeyCode.S))
         {
-            if (!step.isPlaying)
+            if (!stepSource.isPlaying)
             {
-                step.Play();
+                stepSource.Play();
             }
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
-            if (step.isPlaying)
+            if (stepSource.isPlaying)
             {
-                step.Stop();
+                stepSource.Stop();
             }
+        }
+        //change clips of step and ambient based on decay
+        if (DecayManager.decayLevel > 80 || MemoryTracker.badMemoriesFound > 3)
+        {
+            ambientSource.clip = ambient5;
+            ambientSource.volume = 0.5f;
+            ambientSource.pitch = 0.5f;
+            stepSource.clip = step5;
+            stepSource.pitch = 1.65f;
+        } 
+        else if (DecayManager.decayLevel > 60 || MemoryTracker.badMemoriesFound == 3)
+        {
+            ambientSource.clip = ambient4;
+            ambientSource.volume = 0.5f;
+            ambientSource.pitch = 0.5f;
+            stepSource.clip = step4;
+            stepSource.pitch = 1.5f;;
+        } 
+        else if (DecayManager.decayLevel > 40 || MemoryTracker.badMemoriesFound == 2)
+        {
+            ambientSource.clip = ambient3;
+            ambientSource.volume = 1f;
+            ambientSource.pitch = -0.25f;
+            stepSource.clip = step3;
+            stepSource.pitch = 1.0f;
+        } 
+        else if (DecayManager.decayLevel > 20 || MemoryTracker.badMemoriesFound == 1)
+        {
+            ambientSource.clip = ambient2;
+            ambientSource.volume = 0.25f;
+            ambientSource.pitch = 1f;
+            stepSource.clip = step2;
+            stepSource.pitch = 1.25f;
+        } else
+        {
+            ambientSource.clip = ambient1;
+            ambientSource.volume = 1f;
+            ambientSource.pitch = 0.75f;
+            stepSource.clip = step1;
+            stepSource.pitch = 1f;
+        }
+        if (!ambientSource.isPlaying)
+        {
+            ambientSource.Play();
         }
     }
 }
