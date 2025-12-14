@@ -5,29 +5,53 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public static bool GameStarted = false;
+
     [SerializeField] private PlayerController playerController;
-    //added for gate mechanics
-    float timer = 10;
 
     public Canvas GameOverCanvas;
+    public Canvas WinCanvas;
+    public Canvas TutorialCanvas;
+
+    private bool isGameOver = false;
 
     private void Awake()
     {
-        timer = 10;
         if (playerController != null)
         {
             playerController.PlayerDied += WhenPlayerDies;
         }
-        if (GameOverCanvas.gameObject.activeSelf)
+
+        GameOverCanvas.gameObject.SetActive(false);
+        WinCanvas.gameObject.SetActive(false);
+        TutorialCanvas.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        GameStarted = false;
+        Time.timeScale = 0f;
+        TutorialCanvas.gameObject.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if (!GameStarted && Input.anyKeyDown)
         {
-            GameOverCanvas.gameObject.SetActive(false);
+            StartGame();
+        }
+
+        if (isGameOver && Input.anyKeyDown)
+        {
+            RetryClicked();
         }
     }
 
-
     void WhenPlayerDies()
     {
+        isGameOver = true;
         GameOverCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0f;
 
         if (playerController != null)
         {
@@ -35,27 +59,22 @@ public class GameController : MonoBehaviour
         }
     }
 
-    //editted for gate mechanics
-    public void RetryClicked()
+    public void PlayerWon()
     {
-        SceneChanging sceneChanger = new SceneChanging();
-        sceneChanger.ChangeScene("minigame2");
-        SceneManager.UnloadSceneAsync("minigame2");
+        WinCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 
-    //added for gate mechanics
-    private void Update()
+    public void StartGame()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0 && !GameOverCanvas.gameObject.activeSelf)
-        {
-            Debug.Log("You win");
-            SceneChanging sceneChanger = new SceneChanging();
-            sceneChanger.ChangeScene("gamePlay");
-            navigation.gate2 = "lr";
-            navigation.canMove = true;
-            MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
-            MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
-        }
+        GameStarted = true;
+        TutorialCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void RetryClicked()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
