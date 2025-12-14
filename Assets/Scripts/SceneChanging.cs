@@ -7,6 +7,22 @@ public class SceneChanging : MonoBehaviour
 {
     string cur;
     static string lastScene;
+
+    public static SceneChanging Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         lastScene = "startScene";
@@ -25,12 +41,10 @@ public class SceneChanging : MonoBehaviour
                 }
             }
         }
-        
     }
+
     public void ChangeScene(string sceneName)
     {
-        
-
         if (sceneName.Contains("Memory") || sceneName.Contains("minigame"))
         {
             lastScene = sceneName;
@@ -44,7 +58,6 @@ public class SceneChanging : MonoBehaviour
                 }
             }
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-            
         }
         if (sceneName.Contains("gamePlay"))
         {
