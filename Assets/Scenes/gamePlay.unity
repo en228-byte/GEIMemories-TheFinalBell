@@ -782,6 +782,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1111875127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1111875128}
+  - component: {fileID: 1111875129}
+  m_Layer: 0
+  m_Name: EndingController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1111875128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111875127}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 957.3618, y: 149.99664, z: -7.5903034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111875129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111875127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d82a2c24ca806e4db35b9293c753cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodEndingScene: EndScene_Good
+  neutralEndingScene: EndScene_Neutral
+  badEndingScene: EndScene_Bad
+  goodMemoryThreshold: 3
+  badMemoryThreshold: 3
+  highDecayThreshold: 75
 --- !u!1 &1522632363
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 1922165842}
+  totalMemoriesToEndGame: 1
 --- !u!1 &1540320462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,3 +1934,4 @@ SceneRoots:
   - {fileID: 2063348273}
   - {fileID: 1105045496}
   - {fileID: 463110254}
+  - {fileID: 1111875128}
