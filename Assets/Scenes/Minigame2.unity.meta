@@ -1,5 +1,13 @@
 fileFormatVersion: 2
-guid: 32be20667942ea54687a4523df243c84
+<<<<<<<< HEAD:Assets/Scenes/memories/badMemory1.unity.meta
+<<<<<<<< HEAD:Assets/Scenes/memories/badMemory1.unity.meta
+guid: a2d245c2b92d2034887a551e9033c322
+========
+guid: dbd04c8885a494448be701756f7069b1
+>>>>>>>> origin/assets:Assets/Scenes/sceneTest.unity.meta
+========
+guid: a5a38845341c224419fbea498fadc299
+>>>>>>>> UI:Assets/Scenes/Minigame2.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

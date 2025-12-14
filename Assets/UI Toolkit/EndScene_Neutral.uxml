@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/NeutralEndingStyle.uss?fileID=7433441132597879392&amp;guid=9ebdc32d7dabbca459597da1fe790aa8&amp;type=3#NeutralEndingStyle" />
+    <ui:VisualElement name="NGameBg" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/b23f0f7a8e4fc73a8ce9f5b82a57c37f.jpg?fileID=2800000&amp;guid=f3662217ff245264c89896e2ae7f3faf&amp;type=3#b23f0f7a8e4fc73a8ce9f5b82a57c37f&apos;); -unity-background-image-tint-color: rgb(144, 118, 66); justify-content: center; align-items: center;">
+        <ui:VisualElement name="NeutralEndingContainer" style="flex-grow: 0; width: 800px; height: 800px; background-color: rgba(72, 64, 64, 0.6); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-left-color: rgba(171, 166, 4, 0.71); border-right-color: rgba(171, 166, 4, 0.71); border-top-color: rgba(171, 166, 4, 0.71); border-bottom-color: rgba(171, 166, 4, 0.71); padding-top: 60px; padding-right: 60px; padding-bottom: 60px; padding-left: 60px;">
+            <ui:Label tabindex="-1" text="LINGERING GUILT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NeutralEndingHeaderLabel" style="-unity-font-style: bold; font-size: 70px; color: rgb(204, 192, 9); -unity-text-align: middle-center;" />
+            <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; justify-content: center; align-items: center;">
+                <ui:Button text="Retry" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RetryButton" class="mainbutton retrybutton" />
+                <ui:Button text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MainMenuButton" class="mainbutton menubutton" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
