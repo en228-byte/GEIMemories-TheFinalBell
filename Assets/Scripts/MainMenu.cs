@@ -47,13 +47,11 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        // Auto-find AudioSource if not assigned
         if (bgmAudioSource == null)
         {
             bgmAudioSource = GetComponent<AudioSource>();
         }
 
-        // Start playing background music
         if (bgmAudioSource != null && !bgmAudioSource.isPlaying)
         {
             bgmAudioSource.loop = true;
@@ -64,7 +62,6 @@ public class MainMenu : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Unregister callbacks to prevent memory leaks
         if (startButton != null)
             startButton.clicked -= OnStartClicked;
 
@@ -93,8 +90,6 @@ public class MainMenu : MonoBehaviour
         if (isTransitioning) return;
 
         Debug.Log("Continue button clicked");
-        // TODO: Implement save/load system
-        // For now, just load the gameplay scene without resetting
         StartCoroutine(FadeOutAndLoadScene(gameplaySceneName));
     }
 

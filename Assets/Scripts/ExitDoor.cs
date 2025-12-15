@@ -22,7 +22,6 @@ public class ExitDoor : MonoBehaviour
 
     void Start()
     {
-        // Auto-find EndingManager if not assigned
         if (endingManager == null)
         {
             endingManager = FindObjectOfType<EndingManager>();
@@ -32,7 +31,6 @@ public class ExitDoor : MonoBehaviour
             }
         }
 
-        // Auto-find thought bubble from navigation if messageText not assigned
         if (messageText == null)
         {
             navigation nav = FindObjectOfType<navigation>();
