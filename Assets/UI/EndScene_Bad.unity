@@ -225,6 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2040302782}
   - component: {fileID: 2040302783}
+  - component: {fileID: 2040302784}
   m_Layer: 0
   m_Name: BadEnding
   m_TagString: Untagged
@@ -263,6 +264,21 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: c92de353d1cc11f48beab5bdac690e8a, type: 3}
   m_SortingOrder: 0
+--- !u!114 &2040302784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040302781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e9a952bc24cc34fa1bf13ec6958c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endingDocument: {fileID: 2040302783}
+  gameplaySceneName: gamePlay
+  mainMenuSceneName: StartScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

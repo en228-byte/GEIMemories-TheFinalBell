@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Movment.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/UI/EndScene_Bad.unity
+    guid: 7f671a2d4e4105b4ead043b52371ebdb
+  - enabled: 1
+    path: Assets/UI/EndScene_Good.unity
+    guid: f84b14128247f174f9f177fa3af208dd
+  - enabled: 1
+    path: Assets/UI/EndScene_Neutral.unity
+    guid: b3db11dfa6293f54c92a8f850991714b
   m_configObjects: {}
