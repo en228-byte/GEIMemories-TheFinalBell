@@ -31,6 +31,7 @@ public class WinController : MonoBehaviour
     public void Retry()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("minigame1");
     }
 }

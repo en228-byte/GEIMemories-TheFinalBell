@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thoughtBubble: {fileID: 717215603}
-  playerChar: {fileID: 4344952155782539672, guid: 81626b2b57f1bf847b0a7aa1eb54be86, type: 3}
+  playerChar: {fileID: 954053063871054822, guid: 3c03e40f0446667499951a855c21c65f, type: 3}
   curBackground: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
   hallway: {fileID: 7959052316834380925, guid: cb3d9cbb48c4de741a36a9f8bffd6540, type: 3}
   tdHallway: {fileID: 7959052316834380925, guid: 4e1b71a69c5687c43914449cc47df561, type: 3}
@@ -1390,7 +1390,11 @@ MonoBehaviour:
     to activate minigames
 
 
-    *press ''C'' to open and close*'
+    Find the Hidden Memories
+
+
+    *press ''C'' to open
+    and close*'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1417,7 +1421,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.6
+  m_fontSize: 34.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
