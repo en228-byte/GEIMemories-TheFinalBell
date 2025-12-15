@@ -9,6 +9,8 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
+
+    public npcNoise voice;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class Dialogue : MonoBehaviour
     {
         if (index < lines.Length - 1)
         {
+            voice.playNPC();
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
