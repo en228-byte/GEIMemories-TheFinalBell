@@ -9,7 +9,7 @@ public class navigation : MonoBehaviour
     protected string[,] schoolMap = { {"o", "o", "cl",  "o",  "o",  "o"},
                                       {"o", "o", "lr",  "lr", "lr", "lo"},
                                       {"o", "o", "o",   "o",  "o",  "td" },
-                                      {"lo","lr","lr",  "lo", "lr", "g"},
+                                      {"o","lr","lr",  "lo", "lr", "g"},
                                       {"td","l", "o",   "ca", "o",  "o"},
                                       {"td","o", "o",   "o",  "o",  "o"},
                                       {"lr","lr","lr",  "lr", "lo", "o"},
@@ -52,8 +52,8 @@ public class navigation : MonoBehaviour
         exitGate = "lo";
         curBackground = Instantiate(classroom);
         playerChar = Instantiate(playerChar);
-        playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-        curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
+        playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
+        curBackground.transform.localScale = new Vector3(1.85f, 1.85f, 1.85f);
         curBackground.tag = "hide";
         curBackground.name = "cl";
         // Keep player tag as "Player" for NPC dialogue triggers
@@ -90,7 +90,7 @@ public class navigation : MonoBehaviour
 
         
             //going right
-            if (playerChar.transform.position.x >= 17)
+            if (playerChar.transform.position.x >= 16.5)
             {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -102,7 +102,7 @@ public class navigation : MonoBehaviour
             startMinigame();
             }
             //going left
-            if (playerChar.transform.position.x <= -17)
+            if (playerChar.transform.position.x <= -16.5)
             {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -114,7 +114,7 @@ public class navigation : MonoBehaviour
             startMinigame();
             }
             //going up
-            if (playerChar.transform.position.y >= 6)
+            if (playerChar.transform.position.y >= 6.5)
             {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -126,7 +126,7 @@ public class navigation : MonoBehaviour
             startMinigame();
             }
             //going down
-            if (playerChar.transform.position.y <= -9)
+            if (playerChar.transform.position.y <= -8.5)
             {
             if (Input.GetKeyUp(KeyCode.E))
             {
@@ -193,40 +193,40 @@ public class navigation : MonoBehaviour
         if (newBackground == "lr")
         {
             curBackground = Instantiate(hallway);
-            playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
         }
         if (newBackground == "td")
         {
             curBackground = Instantiate(tdHallway);
-            playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
             playerChar.transform.position = new Vector3(0f, 0f, 0f);
         }
         if (newBackground == "cl")
         {
             curBackground = Instantiate(classroom);
-            playerChar.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
         }
         if (newBackground == "ca")
         {
             curBackground = Instantiate(cafeteria);
-            playerChar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            playerChar.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
         }
         if (newBackground == "p")
         {
             curBackground = Instantiate(office);
-            playerChar.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+            playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
         }
         if (newBackground == "l")
         {
             curBackground = Instantiate(library);
-            playerChar.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            playerChar.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
         }
         if (newBackground == "g")
         {
             curBackground = Instantiate(gym);
-            playerChar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            playerChar.transform.localScale = new Vector3(2.0f, 2.0f, 2.0f);
         }
-        curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
+        curBackground.transform.localScale = new Vector3(1.85f, 1.85f, 1.85f);
         curBackground.name = newBackground;
         curBackground.tag = "hide";
     }

@@ -36,16 +36,34 @@ public class memoryInteraction : MonoBehaviour
                 memories[i].name = "badMemory" + (i - 4);
             }
         }
+        //good memories
         memories[0].transform.position = new Vector3(-13.75f, 1f, 0f);
+
         memories[1].transform.position = new Vector3(3.25f, 5.75f, 0f);
-        memories[2].transform.position = new Vector3(17f, 0f, 0f);
-        memories[3].transform.position = new Vector3(10.84f, 6f, 0f);
-        memories[4].transform.position = new Vector3(-12f, 7f, 0f);
-        memories[5].transform.position = new Vector3(1.65f, 4f, 0f);
+        memories[1].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+
+        memories[2].transform.position = new Vector3(16.45f, 0.96f, 0f);
+        memories[2].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+
+        memories[3].transform.position = new Vector3(13.25f, -5.01f, 0f);
+        memories[3].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+
+        memories[4].transform.position = new Vector3(-15.64f, 1.86f, 0f);
+
+        //bad memories
+        memories[5].transform.position = new Vector3(13.62f, 8.32f, 0f);
+        memories[5].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+
         memories[6].transform.position = new Vector3(13.6f, 7.5f, 0f);
-        memories[7].transform.position = new Vector3(-13.87f, 0.41f, 0f);
-        memories[8].transform.position = new Vector3(-4.5f, 1.82f, 0f);
-        memories[9].transform.position = new Vector3(0f, 7.5f, 0f);
+
+        memories[7].transform.position = new Vector3(-13.36f, 1.85f, 0f);
+        memories[7].transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+
+        memories[8].transform.position = new Vector3(-4.47f, 1.68f, 0f);
+        memories[8].transform.localScale = new Vector3(0.075f, 0.075f, 0.075f);
+
+        memories[9].transform.position = new Vector3(0f, 7.23f, 0f);
+        memories[9].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
     }
 
     public void Update()
