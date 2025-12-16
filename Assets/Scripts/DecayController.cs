@@ -8,8 +8,11 @@ public class DecayController : MonoBehaviour
 
     void Start()
     {
-        decayBarUI.SetMax(5);
-        UpdateDecay();
+        if (decayBarUI != null)
+        {
+            decayBarUI.SetMax(5);
+            UpdateDecay();
+        }
     }
 
     void Update()
@@ -19,6 +22,9 @@ public class DecayController : MonoBehaviour
 
     void UpdateDecay()
     {
-        decayBarUI.SetValue(MemoryTracker.badMemoriesFound);
+        if (decayBarUI != null)
+        {
+            decayBarUI.SetValue(MemoryTracker.badMemoriesFound);
+        }
     }
 }

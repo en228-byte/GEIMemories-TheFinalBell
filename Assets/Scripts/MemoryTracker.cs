@@ -31,7 +31,10 @@ public class MemoryTracker : MonoBehaviour
 
     private void Update()
     {
-        display.text = "Good Memories: " + goodMemoriesFound + "\n Bad Memories: " + badMemoriesFound + "\n Last Bad: " + lastBad + "\n Last Good: " + lastGood;
+        if (display != null)
+        {
+            display.text = "Good Memories: " + goodMemoriesFound + "\n Bad Memories: " + badMemoriesFound + "\n Last Bad: " + lastBad + "\n Last Good: " + lastGood;
+        }
     }
 
     public int GetGoodMemories() => goodMemoriesFound;

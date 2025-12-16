@@ -17,10 +17,19 @@ public class NPC_DialogueTrigger : MonoBehaviour
 
     void Start()
     {
+        // Auto-find dialogue system if not assigned
+        if (dialogueSystem == null)
+        {
+            dialogueSystem = FindObjectOfType<Dialogue>(true); // true to include inactive objects
+        }
 
         if (dialogueSystem != null)
         {
             dialogueSystem.OnDialogueEnd += OnDialogueFinished;
+        }
+        else
+        {
+            Debug.LogWarning($"NPC_DialogueTrigger on {gameObject.name}: No Dialogue system found in scene!");
         }
     }
 
@@ -34,12 +43,31 @@ public class NPC_DialogueTrigger : MonoBehaviour
 
     void Update()
     {
+        // Debug: Check if E is pressed at all
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log($"[{gameObject.name}] E pressed. playerInRange={playerInRange}, dialogueSystem={(dialogueSystem != null ? "found" : "NULL")}");
+
+            if (!playerInRange)
+            {
+                Debug.Log($"[{gameObject.name}] Player not in range - trigger not detected");
+            }
+            else if (dialogueSystem == null)
+            {
+                Debug.Log($"[{gameObject.name}] DialogueSystem is NULL!");
+            }
+            else if (dialogueSystem.gameObject.activeSelf)
+            {
+                Debug.Log($"[{gameObject.name}] DialogueBox is already active (dialogue in progress)");
+            }
+        }
+
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            if (dialogueSystem != null && !dialogueSystem.gameObject.activeSelf) 
+            if (dialogueSystem != null && !dialogueSystem.gameObject.activeSelf)
             {
                 string[] linesToUse;
-                
+
                 if (hasCompletedInitialDialogue)
                 {
                     linesToUse = dialogueLines_FollowUp;
@@ -48,10 +76,15 @@ public class NPC_DialogueTrigger : MonoBehaviour
                 {
                     linesToUse = dialogueLines_Initial;
                 }
-                
+
                 if (linesToUse != null && linesToUse.Length > 0)
                 {
-                    dialogueSystem.StartConversation(linesToUse, this); 
+                    Debug.Log($"[{gameObject.name}] Starting dialogue with {linesToUse.Length} lines");
+                    dialogueSystem.StartConversation(linesToUse, this);
+                }
+                else
+                {
+                    Debug.Log($"[{gameObject.name}] No dialogue lines to show!");
                 }
             }
         }
@@ -70,11 +103,13 @@ public class NPC_DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) 
+        Debug.Log($"[{gameObject.name}] OnTriggerEnter2D: {other.gameObject.name} (tag: {other.tag})");
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            Debug.Log($"[{gameObject.name}] Player entered range!");
         }
     }
 
@@ -83,6 +118,7 @@ public class NPC_DialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            Debug.Log($"[{gameObject.name}] Player exited range");
         }
     }
 }

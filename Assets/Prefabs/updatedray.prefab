@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3010789602852689242}
   m_Layer: 0
   m_Name: updatedray
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,8 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519fb895c0617fc4bac87cf1ae68e30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltaX: 0.1
-  deltaY: 0.1
   nextScene: 
 --- !u!95 &1138096700103654816
 Animator:

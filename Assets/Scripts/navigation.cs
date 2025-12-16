@@ -56,7 +56,7 @@ public class navigation : MonoBehaviour
         curBackground.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
         curBackground.tag = "hide";
         curBackground.name = "cl";
-        playerChar.tag = "hide";
+        // Keep player tag as "Player" for NPC dialogue triggers
         gates = new string[4];
         gates[0] = gate1;
         gates[1] = gate2;
