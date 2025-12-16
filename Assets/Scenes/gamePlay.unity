@@ -537,6 +537,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717215601}
   m_CullTransparentMesh: 1
+--- !u!1 &770703646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770703648}
+  - component: {fileID: 770703647}
+  m_Layer: 0
+  m_Name: NPCAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &770703647
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770703646}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 02c66adf17d1b5140af98b386f9449fe, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &770703648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770703646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5224283, y: 4.910706, z: -9.746331}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076530854
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +1104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thoughtBubble: {fileID: 717215603}
-  playerChar: {fileID: 4344952155782539672, guid: 81626b2b57f1bf847b0a7aa1eb54be86, type: 3}
+  playerChar: {fileID: 954053063871054822, guid: 3c03e40f0446667499951a855c21c65f, type: 3}
   curBackground: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
   hallway: {fileID: 7959052316834380925, guid: cb3d9cbb48c4de741a36a9f8bffd6540, type: 3}
   tdHallway: {fileID: 7959052316834380925, guid: 4e1b71a69c5687c43914449cc47df561, type: 3}
@@ -1031,6 +1159,7 @@ MonoBehaviour:
   ambientSource: {fileID: 1076530855}
   bellSource: {fileID: 1599637662}
   stepSource: {fileID: 2108318271}
+  NPCSource: {fileID: 770703647}
   ambient1: {fileID: 8300000, guid: ce555ed67b946d3498177bf7f80c3f41, type: 3}
   ambient2: {fileID: 8300000, guid: 679c7ef861d78e74da4fa304a4d50fc8, type: 3}
   ambient3: {fileID: 8300000, guid: 5d285ef7d77a82c4ea549680b920130d, type: 3}
@@ -1041,6 +1170,9 @@ MonoBehaviour:
   step3: {fileID: 8300000, guid: 7930722156bbae648b6068177c6a4223, type: 3}
   step4: {fileID: 8300000, guid: ceb643f967e9db04dacb11a153cb80d4, type: 3}
   step5: {fileID: 8300000, guid: fd8943fea1dff944c88d8c71317469d6, type: 3}
+  npc1: {fileID: 8300000, guid: 02c66adf17d1b5140af98b386f9449fe, type: 3}
+  npc2: {fileID: 8300000, guid: 5a5001d75a2f70644a6f75daddc04fe8, type: 3}
+  npc3: {fileID: 8300000, guid: 55dd80085b2c20d45b4c0893c66832fc, type: 3}
   bell: {fileID: 8300000, guid: 33e9cda0552337942a009d058f4ff8c7, type: 3}
 --- !u!114 &1522632370
 MonoBehaviour:
@@ -1534,7 +1666,11 @@ MonoBehaviour:
     to activate minigames
 
 
-    *press ''C'' to open and close*'
+    Find the Hidden Memories
+
+
+    *press ''C'' to open
+    and close*'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1561,7 +1697,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.6
+  m_fontSize: 34.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2023,6 +2159,7 @@ SceneRoots:
   - {fileID: 1097475574}
   - {fileID: 1076530856}
   - {fileID: 1599637663}
+  - {fileID: 770703648}
   - {fileID: 2108318272}
   - {fileID: 2063348273}
   - {fileID: 1105045496}

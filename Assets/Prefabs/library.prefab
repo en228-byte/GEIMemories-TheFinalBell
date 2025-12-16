@@ -203,7 +203,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016671777, y: 0.0566466}
+  m_Offset: {x: -0.016671777, y: -0.09753956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -214,7 +214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6525779, y: 0.8867068}
+  m_Size: {x: 1.6525779, y: 1.1950791}
   m_EdgeRadius: 0
 --- !u!1 &1693618016759040959
 GameObject:
@@ -333,7 +333,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.499311, y: -0.19071114}
+  m_Offset: {x: -1.3566542, y: -0.19071114}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -344,7 +344,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0945425, y: 1.3814222}
+  m_Size: {x: 3.379856, y: 1.3814222}
   m_EdgeRadius: 0
 --- !u!1 &3252949258388283507
 GameObject:
@@ -498,7 +498,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.5043883, y: -0.19258088}
+  m_Offset: {x: 1.3442178, y: -0.19258088}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -509,7 +509,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1692724, y: 1.3851618}
+  m_Size: {x: 3.4896135, y: 1.3851618}
   m_EdgeRadius: 0
 --- !u!1 &7918511070263780865
 GameObject:
@@ -628,7 +628,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.8014895, y: -0.026923656}
+  m_Offset: {x: -1.74343, y: -0.026923656}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -639,7 +639,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.763477, y: 1.5339801}
+  m_Size: {x: 3.879596, y: 1.5339801}
   m_EdgeRadius: 0
 --- !u!1001 &4612102618500312769
 PrefabInstance:

@@ -16,6 +16,8 @@ public class Dialogue : MonoBehaviour
     // 2. NEW VARIABLE: Stores which NPC started the current conversation.
     private NPC_DialogueTrigger currentSpeaker; 
 
+    public npcNoise voice;
+    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
@@ -71,6 +73,7 @@ public class Dialogue : MonoBehaviour
     {
         if (index < lines.Length - 1)
         {
+            voice.playNPC();
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());

@@ -21,6 +21,8 @@ public class soundPlayer : MonoBehaviour
     public AudioClip step4;
     public AudioClip step5;
 
+    
+
     public AudioClip bell;
 
 
@@ -106,44 +108,54 @@ public class soundPlayer : MonoBehaviour
             }
         }
         //change clips of step and ambient based on decay
-        if (DecayManager.decayLevel > 80 || MemoryTracker.badMemoriesFound > 3)
+        if (MemoryTracker.badMemoriesFound > 3)
         {
             ambientSource.clip = ambient5;
             ambientSource.volume = 0.5f;
             ambientSource.pitch = 0.5f;
+
             stepSource.clip = step5;
             stepSource.pitch = 1.65f;
+
         } 
-        else if (DecayManager.decayLevel > 60 || MemoryTracker.badMemoriesFound == 3)
+        else if (MemoryTracker.badMemoriesFound == 3)
         {
             ambientSource.clip = ambient4;
             ambientSource.volume = 0.5f;
             ambientSource.pitch = 0.5f;
+
             stepSource.clip = step4;
             stepSource.pitch = 1.5f;;
+
         } 
-        else if (DecayManager.decayLevel > 40 || MemoryTracker.badMemoriesFound == 2)
+        else if (MemoryTracker.badMemoriesFound == 2)
         {
             ambientSource.clip = ambient3;
             ambientSource.volume = 1f;
             ambientSource.pitch = -0.25f;
+
             stepSource.clip = step3;
             stepSource.pitch = 1.0f;
+
         } 
-        else if (DecayManager.decayLevel > 20 || MemoryTracker.badMemoriesFound == 1)
+        else if (MemoryTracker.badMemoriesFound == 1)
         {
             ambientSource.clip = ambient2;
             ambientSource.volume = 0.25f;
             ambientSource.pitch = 1f;
+
             stepSource.clip = step2;
             stepSource.pitch = 1.25f;
+
         } else
         {
             ambientSource.clip = ambient1;
             ambientSource.volume = 1f;
             ambientSource.pitch = 0.75f;
+
             stepSource.clip = step1;
             stepSource.pitch = 1f;
+
         }
         if (!ambientSource.isPlaying)
         {

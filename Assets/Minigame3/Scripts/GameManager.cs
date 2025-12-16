@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             //added for gates
             SceneChanging sceneChanger = new SceneChanging();
             sceneChanger.ChangeScene("gamePlay");
-            navigation.gate3 = "td";
+            navigation.gate3 = "lr";
             navigation.canMove = true;
             MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
             MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
