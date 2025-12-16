@@ -67,7 +67,7 @@ public class ObjectFallController : MonoBehaviour
 
             Instantiate(
                 fallingObject,
-                new Vector3(spawnX, spawnY, 0f),
+                new Vector3(spawnX, 5, 0f),
                 Quaternion.identity
             );
         }
