@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class NPC_DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogueSystem;
+    /*public Dialogue dialogueSystem;
 
     public string[] dialogueLines_Initial; 
     
@@ -85,4 +85,5 @@ public class NPC_DialogueTrigger : MonoBehaviour
             playerInRange = false;
         }
     }
+    */
 }
