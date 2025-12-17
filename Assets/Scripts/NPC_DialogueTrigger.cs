@@ -15,6 +15,8 @@ public class NPC_DialogueTrigger : MonoBehaviour
 
     private bool hasCompletedInitialDialogue = false;
 
+    public npcNoise voice;
+
     void Start()
     {
         if (dialogueSystem == null)
@@ -47,6 +49,10 @@ public class NPC_DialogueTrigger : MonoBehaviour
                 if (linesToUse != null && linesToUse.Length > 0)
                 {
                     dialogueSystem.StartConversation(linesToUse, this);
+                    if (voice != null)
+                    {
+                        voice.playNPC();
+                    }
                 }
             }
         }

@@ -1121,6 +1121,8 @@ MonoBehaviour:
   curBackground: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
   hallway: {fileID: 7959052316834380925, guid: cb3d9cbb48c4de741a36a9f8bffd6540, type: 3}
   tdHallway: {fileID: 7959052316834380925, guid: 4e1b71a69c5687c43914449cc47df561, type: 3}
+  spHallway1: {fileID: 7959052316834380925, guid: 9d2c78e46d78d91489fb6d9a3702a3b7, type: 3}
+  spHallway2: {fileID: 7959052316834380925, guid: c446d5b8fc388d4428de19f8e6a1c579, type: 3}
   classroom: {fileID: 2723648929702224745, guid: 23c34105e350c3c4bbf24143dc92ce9c, type: 3}
   gym: {fileID: 6979080682585323239, guid: d652418f22a69f6438a38f2b09564963, type: 3}
   cafeteria: {fileID: 2796413659128326342, guid: e4ed7c5bcded3744589359c5dc5ccfc7, type: 3}

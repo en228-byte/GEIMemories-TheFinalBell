@@ -34,6 +34,8 @@ public class navigation : MonoBehaviour
     public GameObject curBackground;
     public GameObject hallway;
     public GameObject tdHallway;
+    public GameObject spHallway1;
+    public GameObject spHallway2;
     public GameObject classroom;
     public GameObject gym;
     public GameObject cafeteria;
@@ -174,6 +176,7 @@ public class navigation : MonoBehaviour
                         thoughtBubble.text = "Somewhere new";
                         isTimer = true;
                     changeBackground(next);
+                    Debug.Log(next);
                         curCol = col;
                         curRow = row;
                     return true;
@@ -200,6 +203,16 @@ public class navigation : MonoBehaviour
             curBackground = Instantiate(tdHallway);
             playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
             playerChar.transform.position = new Vector3(0f, 0f, 0f);
+        }
+        if (newBackground == "sp1")
+        {
+            curBackground = Instantiate(spHallway1);
+            playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
+        }
+        if (newBackground == "sp2")
+        {
+            curBackground = Instantiate(spHallway2);
+            playerChar.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
         }
         if (newBackground == "cl")
         {

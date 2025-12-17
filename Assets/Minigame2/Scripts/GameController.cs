@@ -62,7 +62,12 @@ public class GameController : MonoBehaviour
     public void PlayerWon()
     {
         WinCanvas.gameObject.SetActive(true);
-        Time.timeScale = 0f;
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("gamePlay");
+        navigation.gate2 = "sp1";
+        navigation.canMove = true;
+        MemoryTracker.lastGood = MemoryTracker.goodMemoriesFound;
+        MemoryTracker.lastBad = MemoryTracker.badMemoriesFound;
     }
 
     public void StartGame()
@@ -75,6 +80,7 @@ public class GameController : MonoBehaviour
     public void RetryClicked()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneChanging sceneChanger = new SceneChanging();
+        sceneChanger.ChangeScene("minigame2");
     }
 }

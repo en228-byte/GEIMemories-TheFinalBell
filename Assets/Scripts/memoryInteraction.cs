@@ -115,6 +115,14 @@ public class memoryInteraction : MonoBehaviour
                 {
                     memories[i].SetActive(false);
                 }
+                if (newBackground == "sp1")
+                {
+                    memories[i].SetActive(false);
+                }
+                if (newBackground == "sp2")
+                {
+                    memories[i].SetActive(false);
+                }
                 if (newBackground == "cl")
                 {
                     if (i == 0)
