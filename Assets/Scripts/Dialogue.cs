@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,98 +6,36 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
+    public event Action<NPC_DialogueTrigger> OnDialogueEnd;
+
     public TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed;
+    public string[] lines;  
+    public float textSpeed = 0.05f;
     private int index;
 
+    private NPC_DialogueTrigger currentSpeaker;
+
     public npcNoise voice;
-    // Start is called before the first frame update
+
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        if (lines != null && lines.Length > 0)
         {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
-        }
-    }
-    void StartDialogue()
-    {
-        index = 0;
-        StartCoroutine(TypeLine());
-    }
-
-    IEnumerator TypeLine()
-    {
-        foreach (char c in lines[index].ToCharArray())
-        {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
-        }
-    }
-
-    void NextLine()
-    {
-        if (index < lines.Length - 1)
-        {
-            voice.playNPC();
-            index++;
-            textComponent.text = string.Empty;
-            StartCoroutine(TypeLine());
+            StartDialogue();
         }
         else
         {
             gameObject.SetActive(false);
-            SceneChanging sceneChanger = new SceneChanging();
-            sceneChanger.ChangeScene("gamePlay");
         }
-    }
-}
-/*using System; // Required for the Action delegate
-using System.Collections;
-using UnityEngine;
-using TMPro;
-
-public class Dialogue : MonoBehaviour
-{
-    // 1. CHANGE: The event now accepts the specific trigger that just finished talking.
-    public event Action<NPC_DialogueTrigger> OnDialogueEnd; 
-    
-    public TextMeshProUGUI textComponent;
-    private string[] lines; 
-    public float textSpeed = 0.05f; 
-    private int index;
-
-    // 2. NEW VARIABLE: Stores which NPC started the current conversation.
-    private NPC_DialogueTrigger currentSpeaker; 
-
-    public npcNoise voice;
-    // Start is called before the first frame update
-    void Start()
-    {
-        textComponent.text = string.Empty;
-        gameObject.SetActive(false); 
     }
 
     void Update()
     {
-        if (lines == null || !gameObject.activeSelf) 
+        if (lines == null || lines.Length == 0 || !gameObject.activeSelf)
         {
-            return; 
+            return;
         }
 
         bool advanceInput = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E);
@@ -114,20 +53,25 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-    
-    // 3. CHANGE: The method now accepts the speaker argument (the specific NPC instance).
+
+    void StartDialogue()
+    {
+        index = 0;
+        StartCoroutine(TypeLine());
+    }
+
     public void StartConversation(string[] newLines, NPC_DialogueTrigger speaker)
     {
-        lines = newLines; 
-        currentSpeaker = speaker; // Store the speaker
-        
+        lines = newLines;
+        currentSpeaker = speaker;
+
         gameObject.SetActive(true);
 
         index = 0;
-        textComponent.text = string.Empty; 
+        textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
     }
-    
+
     IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
@@ -141,19 +85,27 @@ public class Dialogue : MonoBehaviour
     {
         if (index < lines.Length - 1)
         {
-            voice.playNPC();
+            if (voice != null)
+            {
+                voice.playNPC();
+            }
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else
         {
-            // End of conversation:
-            lines = null; 
             gameObject.SetActive(false);
-            
-            // 4. CHANGE: Invoke the event, passing the speaker that just finished.
-            OnDialogueEnd?.Invoke(currentSpeaker); 
+
+            OnDialogueEnd?.Invoke(currentSpeaker);
+
+            if (currentSpeaker == null)
+            {
+                SceneChanging sceneChanger = new SceneChanging();
+                sceneChanger.ChangeScene("gamePlay");
+            }
+
+            lines = null;
         }
     }
-}*/
+}

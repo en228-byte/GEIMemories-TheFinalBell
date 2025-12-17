@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157290041129187975, guid: 58dbf2727ab9f5c4e8d2831b9e85bcf7, type: 3}
+      propertyPath: textSpeed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7157715385361043155, guid: 58dbf2727ab9f5c4e8d2831b9e85bcf7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
