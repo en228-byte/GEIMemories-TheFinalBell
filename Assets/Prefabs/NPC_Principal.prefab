@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4.54, y: 5.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -141,16 +141,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eec56287086ecb4cafa4b5499414508, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueSystem: {fileID: 0}
   dialogueLines_Initial:
   - 'MR. GRAY: Sit down, please.'
-  - "MR. GRAY: You've been wandering these halls long enough."
-  - 'MC: You... know who I am?'
-  - "MR. GRAY: Of course I do. You've been here before - every time the bell rings, you come back."
+  - 'MR. GRAY: You''ve been wandering these halls long enough.'
+  - 'RAY: You... know who I am?'
+  - 'MR. GRAY: Of course I do. You''ve been here before - every time the bell rings,
+    you come back.'
   dialogueLines_FollowUp:
   - 'MR. GRAY: The truth sits right where you left it.'
   - 'MR. GRAY: Under all your apologies.'
-  - "MR. GRAY: Or maybe you'd prefer the blame."
-  - "MR. GRAY: It hides where everyone signed their names, except the ones who ran."
+  - 'MR. GRAY: Or maybe you''d prefer the blame.'
+  - 'MR. GRAY: It hides where everyone signed their names, except the ones who ran.'
+  voice: {fileID: 0}

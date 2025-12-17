@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4.54, y: 5.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -141,18 +141,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eec56287086ecb4cafa4b5499414508, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueSystem: {fileID: 0}
   dialogueLines_Initial:
   - 'MRS. NICK: You again. Always showing up after the whistle.'
-  - 'MC: ...Do I know you?'
+  - 'RAY: ...Do I know you?'
   - 'MRS. NICK: You used to. You were one of my star players.'
   - 'MRS. NICK: Fast. Ambitious. Obsessed with winning.'
   - "MRS. NICK: Tell me \u2014 how\u2019s that working out for you?"
   dialogueLines_FollowUp:
   - 'MRS. NICK: You want to remember? '
-  - 'MRS. NICK: Start where the the applause was loudest and the cheers felt like thunder.'
+  - 'MRS. NICK: Start where the the applause was loudest and the cheers felt like
+    thunder.'
   - "MRS. NICK: You\u2019ll find what you left behind there. "
   - 'MRS. NICK: But beware, success always casts shadows.'
-  - 'MRS. NICK: The second fragment is hidden in the quiet corners of your greatest regret.'
+  - 'MRS. NICK: The second fragment is hidden in the quiet corners of your greatest
+    regret.'
+  voice: {fileID: 0}

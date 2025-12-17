@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4.54, y: 5.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -141,15 +141,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eec56287086ecb4cafa4b5499414508, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogueSystem: {fileID: 0}
   dialogueLines_Initial:
-  - "MARNIE: Oh, you're late again, dear. Hungry, are we?"
-  - "MC (internal): The smell of food... but nothing's cooking."
+  - 'MARNIE: Oh, you''re late again, dear. Hungry, are we?'
+  - 'RAY (internal): The smell of food... but nothing''s cooking.'
   - 'MARNIE: You should sit and eat while you can. Food keeps the mind steady.'
   - 'MARNIE: ...Before it starts to rot.'
   dialogueLines_FollowUp:
-  - "MARNIE: You're looking for something, huh?"
-  - "MARNIE: You're looking for something, huh?"
+  - 'MARNIE: You''re looking for something, huh?'
+  - 'MARNIE: You''re looking for something, huh?'
   - 'MARNIE: Or maybe the one by the trash bin... where they made him sit.'
+  voice: {fileID: 0}

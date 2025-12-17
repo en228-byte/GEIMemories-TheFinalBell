@@ -555,7 +555,7 @@ MonoBehaviour:
   dialogueSystem: {fileID: 8827151834021461103}
   dialogueLines_Initial:
   - 'MARNIE: Oh, you''re late again, dear. Hungry, are we?'
-  - 'MC (internal): The smell of food... but nothing''s cooking.'
+  - 'RAY (internal): The smell of food... but nothing''s cooking.'
   - 'MARNIE: You should sit and eat while you can. Food keeps the mind steady.'
   - 'MARNIE: ...Before it starts to rot.'
   dialogueLines_FollowUp:
