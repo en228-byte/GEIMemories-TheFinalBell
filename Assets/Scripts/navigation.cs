@@ -14,7 +14,7 @@ public class navigation : MonoBehaviour
                                       {"td","o", "o",   "o",  "o",  "o"},
                                       {"lr","lr","lr",  "lr", "lo", "o"},
                                       {"o", "o", "o",   "o",  "td",  "o" },
-                                      {"o", "o", "o",   "o",  "lr",  "p"},
+                                      {"o", "o", "o",   "o",  "sp2",  "p"},
                                       {"o", "o", "o",   "o",  "o",  "o"} };
     int curRow;
     int curCol;
